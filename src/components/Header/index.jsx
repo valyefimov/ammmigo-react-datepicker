@@ -2,7 +2,6 @@ import React from 'react';
 import { addMonths, format, subMonths } from 'date-fns';
 
 const Header = ({setSelectedDate, setActiveDate, activeDate}) => {
-  console.log(new Date());
   const today = new Date();
   const yesterday = new Date(today);
   yesterday.setDate(yesterday.getDate() - 1);
@@ -15,6 +14,7 @@ const Header = ({setSelectedDate, setActiveDate, activeDate}) => {
           setSelectedDate(yesterday);
           setActiveDate(yesterday);
         }}
+        role="presentation"
       >
         Yesterday
       </div>
@@ -24,12 +24,14 @@ const Header = ({setSelectedDate, setActiveDate, activeDate}) => {
           setSelectedDate(today);
           setActiveDate(today);
         }}
+        role="presentation"
       >
         Today
       </div>
       <div
         className="navIcon"
         onClick={() => setActiveDate(subMonths(activeDate, 1))}
+        role="presentation"
       >
         {'<'}
       </div>
@@ -37,11 +39,12 @@ const Header = ({setSelectedDate, setActiveDate, activeDate}) => {
       <div
         className="navIcon"
         onClick={() => setActiveDate(addMonths(activeDate, 1))}
+        role="presentation"
       >
         {'>'}
       </div>
     </div>
   );
-};
+}
 
 export default Header;

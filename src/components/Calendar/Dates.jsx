@@ -17,6 +17,7 @@ const Dates = ({activeDate, selectedDate, setSelectedDate}) => {
           onClick={() => {
             setSelectedDate(cloneDate);
           }}
+          role="presentation"
         >
           {format(currentDate, 'd')}
         </div>
@@ -43,6 +44,6 @@ const Dates = ({activeDate, selectedDate, setSelectedDate}) => {
   }
 
   return <div>{allWeeks}</div>;
-};
+}
 
 export default Dates;
