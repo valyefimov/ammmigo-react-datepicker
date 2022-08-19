@@ -1,14 +1,9 @@
 import React from 'react';
-
 import './App.css';
-import Calendar from './components/Calendar';
+import Datepicker from './components/Datepicker';
 
-const App = () => {
-  return (
-    <div className="App">
-      <Calendar />
-    </div>
-  );
+function App() {
+  return <Datepicker />;
 }
 
 export default App;

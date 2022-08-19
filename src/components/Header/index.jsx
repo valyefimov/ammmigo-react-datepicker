@@ -1,47 +1,18 @@
 import React from 'react';
-import { addMonths, format, subMonths } from 'date-fns';
+import './styles.css';
 
-const Header = ({setSelectedDate, setActiveDate, activeDate}) => {
-  console.log(new Date());
-  const today = new Date();
-  const yesterday = new Date(today);
-  yesterday.setDate(yesterday.getDate() - 1);
-
+function Header() {
   return (
-    <div className="header">
-      <div
-        className="todayButton"
-        onClick={() => {
-          setSelectedDate(yesterday);
-          setActiveDate(yesterday);
-        }}
-      >
-        Yesterday
-      </div>
-      <div
-        className="todayButton"
-        onClick={() => {
-          setSelectedDate(today);
-          setActiveDate(today);
-        }}
-      >
-        Today
-      </div>
-      <div
-        className="navIcon"
-        onClick={() => setActiveDate(subMonths(activeDate, 1))}
-      >
-        {'<'}
-      </div>
-      <h2 className="currentMonth">{format(activeDate, 'MMMM yyyy')}</h2>
-      <div
-        className="navIcon"
-        onClick={() => setActiveDate(addMonths(activeDate, 1))}
-      >
-        {'>'}
-      </div>
+    <div className="calendar_month-wrapper">
+      <a href className="icon-button is-small w-inline-block" tabIndex={0}>
+        <div className="chevron is-left w-icon-dropdown-toggle" />
+      </a>
+      <div className="text-size-medium">April 2022</div>
+      <a href className="icon-button is-small w-inline-block" tabIndex={0}>
+        <div className="chevron is-right w-icon-dropdown-toggle" />
+      </a>
     </div>
   );
-};
+}
 
 export default Header;

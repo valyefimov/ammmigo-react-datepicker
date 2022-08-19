@@ -1,0 +1,97 @@
+.dropdown_button-wrapper {
+  display: -ms-grid;
+  display: grid;
+  margin-right: -0.5rem;
+  margin-left: -0.5rem;
+  padding: 1rem 1rem 0.5rem;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 0.25rem;
+  grid-row-gap: 16px;
+  -ms-grid-columns: -webkit-max-content -webkit-max-content;
+  -ms-grid-columns: max-content max-content;
+  grid-template-columns: -webkit-max-content -webkit-max-content;
+  grid-template-columns: max-content max-content;
+  -ms-grid-rows: auto;
+  grid-template-rows: auto;
+  border-top: 1px solid #f5f7fc;
+}
+
+.button-link {
+  padding: 0.86rem 1.5rem;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 0.75rem;
+  background-color: #4747fc;
+  box-shadow: 0 0 0rem 0 rgba(0, 0, 218, 0.18);
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.088em;
+  text-transform: uppercase;
+}
+
+.button-link:hover {
+  background-color: #2d2de8;
+  box-shadow: 1px 1px 0.75rem 0.1rem rgba(0, 0, 218, 0.18);
+}
+
+.button-link:focus-visible {
+  outline-color: #1c1c74;
+  outline-offset: 0.25rem;
+  outline-style: solid;
+  outline-width: 0.15rem;
+}
+
+.button-link[data-wf-focus-visible] {
+  outline-color: #1c1c74;
+  outline-offset: 0.25rem;
+  outline-style: solid;
+  outline-width: 0.15rem;
+}
+
+.button-link.is-small {
+  padding: 0.33rem 0.75rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  color: rgba(39, 39, 46, 0.7);
+  font-size: 0.9375rem;
+  letter-spacing: 0em;
+  text-transform: none;
+}
+
+.button-link.is-small:hover {
+  background-color: #f5f7fc;
+  box-shadow: none;
+}
+
+.button-link.is-small.is-primary {
+  color: #4747fc;
+}
+
+.w-button {
+  display: inline-block;
+  padding: 9px 15px;
+  background-color: #3898ec;
+  color: white;
+  border: 0;
+  line-height: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 0;
+}
+input.w-button {
+  -webkit-appearance: button;
+}
