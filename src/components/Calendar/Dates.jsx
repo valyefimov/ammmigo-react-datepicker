@@ -23,7 +23,7 @@ const Dates = ({activeDate, selectedDate, setSelectedDate}) => {
       );
       currentDate = addDays(currentDate, 1);
     }
-    return <div>{week}</div>;
+    return <div className="weekContainer">{week}</div>;
   };
 
   const startOfTheSelectedMonth = startOfMonth(activeDate);
@@ -42,7 +42,7 @@ const Dates = ({activeDate, selectedDate, setSelectedDate}) => {
     currentDate = addDays(currentDate, 7);
   }
 
-  return <div className="weekContainer">{allWeeks}</div>;
+  return <div>{allWeeks}</div>;
 };
 
 export default Dates;
