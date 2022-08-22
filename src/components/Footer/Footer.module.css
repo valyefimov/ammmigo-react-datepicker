@@ -1,0 +1,55 @@
+.dropdownButtonWrapper {
+  display: -ms-grid;
+  display: grid;
+  margin-right: -0.5rem;
+  margin-left: -0.5rem;
+  padding: 1rem 1rem 0.5rem;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 0.25rem;
+  grid-row-gap: 16px;
+  -ms-grid-columns: -webkit-max-content -webkit-max-content;
+  -ms-grid-columns: max-content max-content;
+  grid-template-columns: -webkit-max-content -webkit-max-content;
+  grid-template-columns: max-content max-content;
+  -ms-grid-rows: auto;
+  grid-template-rows: auto;
+  border-top: 1px solid #f5f7fc;
+}
+
+.buttonLinkIsSmall {
+  padding: 0.33rem 0.75rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  color: rgba(39, 39, 46, 0.7);
+  font-size: 0.9375rem;
+  letter-spacing: 0em;
+  text-transform: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.buttonLinkIsSmall:hover {
+  background-color: #f5f7fc;
+  box-shadow: none;
+}
+
+.buttonLinkIsSmallIsPrimary {
+  padding: 0.33rem 0.75rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  color: #4747fc;
+  font-size: 0.9375rem;
+  letter-spacing: 0em;
+  text-transform: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.buttonLinkIsSmallIsPrimary:hover {
+  background-color: #f5f7fc;
+  box-shadow: none;
+}

@@ -1,0 +1,181 @@
+.headerComponent {
+    z-index: 1100;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    background-color: #f6f8fd;
+}
+
+.container {
+    max-width: 88rem;
+}
+
+.pagePadding {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.headerLayout {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.headerTitleWrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-right: 1rem;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.headerTitleMobile {
+    display: none;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    padding-right: 0.5rem;
+    -webkit-transform-origin: -25% 50%;
+    -ms-transform-origin: -25% 50%;
+    transform-origin: -25% 50%;
+    color: #2a2a3a;
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+.headerDropdownWrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: -1rem;
+}
+
+.dropdownComponent {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 0.9375rem;
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    margin-right: auto;
+    z-index: 900;
+    margin-left: 240px;
+}
+
+.dropdownToggle {
+    z-index: -1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 2rem;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 1rem;
+    color: rgba(42, 42, 58, 0.7);
+
+    position: relative;
+    vertical-align: top;
+    text-decoration: none;
+    color: #222222;
+    padding: 20px;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    white-space: nowrap;
+}
+
+.dropdownToggle:hover {
+    background-color: #eff2f9;
+    color: #2a2a3a;
+}
+
+.dropdownOverlay {
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    right: auto;
+    bottom: 0%;
+    z-index: -1;
+    display: none;
+    background-color: rgba(92, 110, 153, 0.2);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    width: 100%;
+}
+
+.dropdownToggleContent {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    color: rgba(42, 42, 58, 0.7);
+    font-size: 18px;
+}
+
+.dropdownList {
+    left: 0%;
+    top: 0%;
+    right: 0%;
+    bottom: auto;
+    margin: -0.5rem;
+    padding: 0.5rem;
+    width: 34.5rem;
+    box-shadow: 3px 3px 0.75rem 0 rgba(40, 40, 114, 0.03), 0 1px 0.25rem 0 rgba(40, 40, 114, 0.05);
+    position: absolute;
+    background: #dddddd;
+    display: none;
+    min-width: 100%;
+}
+
+.calendarComponent {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.calendarDayWrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.dropdownChevron {
+    position: static;
+    margin-right: 0px;
+    margin-left: 0.5rem;
+}
+
+.wIconDropdownToggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    margin-right: 20px;
+    width: 1em;
+    height: 1em;
+}

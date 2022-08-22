@@ -1,20 +1,9 @@
 import React from 'react';
-import {
-  addDays,
-  endOfMonth,
-  endOfWeek,
-  format,
-  isAfter,
-  isBefore,
-  isSameDay,
-  isSameMonth,
-  startOfMonth,
-  startOfWeek,
-} from 'date-fns';
+import { addDays, endOfMonth, endOfWeek, format, isSameDay, isSameMonth, startOfMonth, startOfWeek } from 'date-fns';
 
-import './styles.css';
+import classes from './Calendar.module.css';
 
-const Dates = ({ activeDate, selectedDate, setSelectedDate, startPeriod, endPeriod }) => {
+const Dates = ({ activeDate, selectedDate, setSelectedDate }) => {
   const generateDatesForCurrentWeek = (date, selectedDate, activeDate) => {
     let currentDate = date;
 
@@ -25,30 +14,17 @@ const Dates = ({ activeDate, selectedDate, setSelectedDate, startPeriod, endPeri
       week.push(
         <div
           key={day}
-          className={`
-          ${
-            isBefore(new Date(currentDate), new Date(endPeriod)) &&
-            isAfter(new Date(currentDate), new Date(startPeriod))
-              ? 'selectedRange'
-              : ''
+          className={`${isSameMonth(currentDate, activeDate) ? '' : `${classes.iconButton}`} ${
+            isSameDay(currentDate, selectedDate) ? `${classes.iconButtonIsActive}` : `${classes.iconButton}`
           }
-          ${isSameDay(currentDate, startPeriod) ? 'startPeriod' : ''}
-          ${isSameDay(currentDate, endPeriod) ? 'endPeriod' : ''}
+          ${isSameDay(currentDate, new Date()) ? '' : `${classes.iconButton}`}
           `}
+          onClick={() => {
+            setSelectedDate(cloneDate);
+          }}
+          role="presentation"
         >
-          <div
-            className={`day ${isSameMonth(currentDate, activeDate) ? '' : 'inactiveDay'} ${
-              isSameDay(currentDate, selectedDate) ? 'selectedDay' : ''
-            }
-          ${isSameDay(currentDate, new Date()) ? 'today' : ''}
-          `}
-            onClick={() => {
-              setSelectedDate(cloneDate);
-            }}
-            role="presentation"
-          >
-            {format(currentDate, 'd')}
-          </div>
+          {format(currentDate, 'd')}
         </div>
       );
       currentDate = addDays(currentDate, 1);
@@ -57,7 +33,7 @@ const Dates = ({ activeDate, selectedDate, setSelectedDate, startPeriod, endPeri
     const key = format(currentDate, 'd');
 
     return (
-      <div key={key} className="weekContainer">
+      <div key={key} className={classes.weekContainer}>
         {week}
       </div>
     );

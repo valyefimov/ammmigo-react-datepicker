@@ -1,6 +1,5 @@
 import React from 'react';
-
-import './styles.css';
+import classes from './Sidebar.module.css';
 
 const Sidebar = ({ setSelectedDate, setActiveDate, setStartPeriod }) => {
   const today = new Date();
@@ -14,20 +13,9 @@ const Sidebar = ({ setSelectedDate, setActiveDate, setStartPeriod }) => {
   lastNinetyDays.setDate(lastNinetyDays.getDate() - 89);
 
   return (
-    <div>
+    <div className={classes.dropdownItemWrapperIsCalendar}>
       <div
-        className="navButton"
-        onClick={() => {
-          setSelectedDate(yesterday);
-          setActiveDate(yesterday);
-          setStartPeriod(yesterday);
-        }}
-        role="presentation"
-      >
-        Yesterday
-      </div>
-      <div
-        className="navButton"
+        className={classes.dropdownItem}
         onClick={() => {
           setSelectedDate(today);
           setActiveDate(today);
@@ -38,7 +26,18 @@ const Sidebar = ({ setSelectedDate, setActiveDate, setStartPeriod }) => {
         Today
       </div>
       <div
-        className="navButton"
+        onClick={() => {
+          setSelectedDate(yesterday);
+          setActiveDate(yesterday);
+          setStartPeriod(yesterday);
+        }}
+        className={classes.dropdownItem}
+        role="presentation"
+      >
+        Yesterday
+      </div>
+      <div
+        className={classes.dropdownItem}
         onClick={() => {
           setSelectedDate(lastSevenDays);
           setActiveDate(lastSevenDays);
@@ -49,7 +48,7 @@ const Sidebar = ({ setSelectedDate, setActiveDate, setStartPeriod }) => {
         Last 7 days
       </div>
       <div
-        className="navButton"
+        className={classes.dropdownItem}
         onClick={() => {
           setSelectedDate(lastThirtyDays);
           setActiveDate(lastThirtyDays);
@@ -60,7 +59,7 @@ const Sidebar = ({ setSelectedDate, setActiveDate, setStartPeriod }) => {
         Last 30 days
       </div>
       <div
-        className="navButton"
+        className={classes.dropdownItem}
         onClick={() => {
           setSelectedDate(lastNinetyDays);
           setActiveDate(lastNinetyDays);
