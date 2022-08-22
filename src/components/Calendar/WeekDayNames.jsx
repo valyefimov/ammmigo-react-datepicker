@@ -1,7 +1,9 @@
 import React from 'react';
 import { addDays, format, startOfWeek } from 'date-fns';
 
-const WeekDaysNames = ({activeDate}) => {
+import './styles.css';
+
+const WeekDayNames = ({ activeDate }) => {
   const weekStartDate = startOfWeek(activeDate);
   const weekDays = [];
   for (let day = 0; day < 7; day++) {
@@ -14,4 +16,4 @@ const WeekDaysNames = ({activeDate}) => {
   return <div className="weekContainer">{weekDays}</div>;
 };
 
-export default WeekDaysNames;
+export default WeekDayNames;

@@ -1,0 +1,24 @@
+.datepickerWrapper {
+  width: 34.5rem;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn {
+  border: none;
+  background:transparent;
+  cursor: pointer;
+  color: #68686d;
+}
+
+.primary {
+  color: #4747fc;
+}

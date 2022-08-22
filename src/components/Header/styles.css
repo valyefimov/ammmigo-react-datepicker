@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.currentMonth {
+  margin: 20px 24px;
+  font-size: 24px;
+}
+
+.navIcon {
+  width: 20px;
+  height: 20px;
+  padding: 8px;
+  cursor: pointer;
+}

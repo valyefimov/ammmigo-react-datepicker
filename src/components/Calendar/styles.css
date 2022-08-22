@@ -1,0 +1,49 @@
+.selectedRange {
+  background-color: #8aa5f6;
+}
+
+.day {
+  margin: 12px;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.inactiveDay {
+  color: #9e9e9e;
+}
+
+.today {
+  background: #efefee;
+  border-radius: 50%;
+}
+
+.selectedDay {
+  color: white;
+  background: #3366ff;
+  border-radius: 50%;
+}
+
+.weekContainer {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.weekContainer .navIcon:hover {
+  border-radius: 50%;
+  background: #efefee;
+}
+
+.weekNames {
+  color: #9e9e9e;
+  cursor: default;
+}
+
+.period {
+  display: flex;
+  margin-left: 12px;
+}

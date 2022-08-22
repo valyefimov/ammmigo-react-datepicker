@@ -1,19 +1,24 @@
 import React from 'react';
 import { addDays, endOfMonth, endOfWeek, format, isSameDay, isSameMonth, startOfMonth, startOfWeek } from 'date-fns';
 
-const Dates = ({activeDate, selectedDate, setSelectedDate}) => {
+import './styles.css';
+
+const Dates = ({ activeDate, selectedDate, setSelectedDate }) => {
   const generateDatesForCurrentWeek = (date, selectedDate, activeDate) => {
     let currentDate = date;
+
     const week = [];
+
     for (let day = 0; day < 7; day++) {
       const cloneDate = currentDate;
       week.push(
         <div
           key={day}
-          className={`day ${
-            isSameMonth(currentDate, activeDate) ? '' : 'inactiveDay'
-          } ${isSameDay(currentDate, selectedDate) ? 'selectedDay' : ''}
-          ${isSameDay(currentDate, new Date()) ? 'today' : ''}`}
+          className={`day ${isSameMonth(currentDate, activeDate) ? '' : 'inactiveDay'} ${
+            isSameDay(currentDate, selectedDate) ? 'selectedDay' : ''
+          }
+          ${isSameDay(currentDate, new Date()) ? 'today' : ''}
+          `}
           onClick={() => {
             setSelectedDate(cloneDate);
           }}
@@ -24,7 +29,14 @@ const Dates = ({activeDate, selectedDate, setSelectedDate}) => {
       );
       currentDate = addDays(currentDate, 1);
     }
-    return <div className="weekContainer">{week}</div>;
+
+    const key = format(currentDate, 'd');
+
+    return (
+      <div key={key} className="weekContainer">
+        {week}
+      </div>
+    );
   };
 
   const startOfTheSelectedMonth = startOfMonth(activeDate);
@@ -37,13 +49,11 @@ const Dates = ({activeDate, selectedDate, setSelectedDate}) => {
   const allWeeks = [];
 
   while (currentDate <= endDate) {
-    allWeeks.push(
-      generateDatesForCurrentWeek(currentDate, selectedDate, activeDate)
-    );
+    allWeeks.push(generateDatesForCurrentWeek(currentDate, selectedDate, activeDate));
     currentDate = addDays(currentDate, 7);
   }
 
   return <div>{allWeeks}</div>;
-}
+};
 
 export default Dates;

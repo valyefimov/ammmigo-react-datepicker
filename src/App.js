@@ -1,12 +1,12 @@
 import React from 'react';
 
 import './App.css';
-import Calendar from './components/Calendar';
+import Datepicker from './components/Datepicker';
 
 const App = () => (
-    <div className="App">
-      <Calendar />
-    </div>
-  )
+  <div className="App">
+    <Datepicker />
+  </div>
+);
 
 export default App;
