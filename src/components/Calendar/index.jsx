@@ -1,20 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { format } from 'date-fns';
 
 import Header from '../Header';
-import WeekDaysNames from './WeekDaysNames';
+import WeekDayNames from './WeekDayNames';
 import Dates from './Dates';
+import './styles.css';
 
-const Calendar = () => {
-  const [selectedDate, setSelectedDate] = useState(new Date());
-  const [activeDate, setActiveDate] = useState(new Date());
-
-  return (
-    <section>
-      <Header setSelectedDate={setSelectedDate} setActiveDate={setActiveDate} activeDate={activeDate} />
-      <WeekDaysNames activeDate={activeDate} />
-      <Dates activeDate={activeDate} selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
-    </section>
-  );
-};
-
+const Calendar = ({ setActiveDate, activeDate, selectedDate, setSelectedDate, startPeriod, endPeriod }) => (
+  <section>
+    <Header setActiveDate={setActiveDate} activeDate={activeDate} />
+    <WeekDayNames activeDate={activeDate} />
+    <Dates
+      activeDate={activeDate}
+      selectedDate={selectedDate}
+      setSelectedDate={setSelectedDate}
+      startPeriod={startPeriod}
+      endPeriod={endPeriod}
+    />
+    <div className="period">{`${format(new Date(startPeriod), 'PP')} — ${format(new Date(endPeriod), 'PP')}`}</div>
+  </section>
+);
 export default Calendar;
