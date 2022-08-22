@@ -15,6 +15,7 @@ const Calendar = ({ setActiveDate, activeDate, selectedDate, setSelectedDate, st
       selectedDate={selectedDate}
       setSelectedDate={setSelectedDate}
       startPeriod={startPeriod}
+      endPeriod={endPeriod}
     />
     <div className="period">{`${format(new Date(startPeriod), 'PP')} — ${format(new Date(endPeriod), 'PP')}`}</div>
   </section>

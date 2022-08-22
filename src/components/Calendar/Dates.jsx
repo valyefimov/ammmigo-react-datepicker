@@ -1,9 +1,20 @@
 import React from 'react';
-import { addDays, endOfMonth, endOfWeek, format, isSameDay, isSameMonth, startOfMonth, startOfWeek } from 'date-fns';
+import {
+  addDays,
+  endOfMonth,
+  endOfWeek,
+  format,
+  isAfter,
+  isBefore,
+  isSameDay,
+  isSameMonth,
+  startOfMonth,
+  startOfWeek,
+} from 'date-fns';
 
 import './styles.css';
 
-const Dates = ({ activeDate, selectedDate, setSelectedDate }) => {
+const Dates = ({ activeDate, selectedDate, setSelectedDate, startPeriod, endPeriod }) => {
   const generateDatesForCurrentWeek = (date, selectedDate, activeDate) => {
     let currentDate = date;
 
@@ -18,6 +29,12 @@ const Dates = ({ activeDate, selectedDate, setSelectedDate }) => {
             isSameDay(currentDate, selectedDate) ? 'selectedDay' : ''
           }
           ${isSameDay(currentDate, new Date()) ? 'today' : ''}
+          ${
+            isBefore(new Date(currentDate), new Date(endPeriod)) &&
+            isAfter(new Date(currentDate), new Date(startPeriod))
+              ? 'selectedRange'
+              : ''
+          }
           `}
           onClick={() => {
             setSelectedDate(cloneDate);
