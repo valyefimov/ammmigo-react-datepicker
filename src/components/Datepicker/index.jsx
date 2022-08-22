@@ -40,7 +40,9 @@ const Datepicker = () => {
                   <div className={classes.dropdownOverlay} style={{ display: 'block' }} />
                   <div className={classes.dropdownToggleContent}>
                     <div>Last 7 days</div>
-                    <ChevronDown />
+                    <div className={classes.chevronPosition}>
+                      <ChevronDown />
+                    </div>
                   </div>
                 </div>
               </div>

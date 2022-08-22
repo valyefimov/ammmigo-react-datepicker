@@ -71,7 +71,7 @@
     text-align: left;
     margin-right: auto;
     z-index: 900;
-    margin-left: 240px;
+    margin-left: 60px;
 }
 
 .dropdownToggle {
@@ -163,19 +163,7 @@
     flex-wrap: wrap;
 }
 
-.dropdown_chevron {
-    position: static;
-    margin-right: 0px;
-    margin-left: 0.5rem;
-}
-
-.w_icon_dropdown_toggle {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    margin-right: 20px;
-    width: 1em;
-    height: 1em;
+.chevronPosition{
+    margin-top: 3px;
+    margin-left: 10px;
 }
