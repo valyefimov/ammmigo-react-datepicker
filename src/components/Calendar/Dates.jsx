@@ -25,23 +25,30 @@ const Dates = ({ activeDate, selectedDate, setSelectedDate, startPeriod, endPeri
       week.push(
         <div
           key={day}
-          className={`day ${isSameMonth(currentDate, activeDate) ? '' : 'inactiveDay'} ${
-            isSameDay(currentDate, selectedDate) ? 'selectedDay' : ''
-          }
-          ${isSameDay(currentDate, new Date()) ? 'today' : ''}
+          className={`
           ${
             isBefore(new Date(currentDate), new Date(endPeriod)) &&
             isAfter(new Date(currentDate), new Date(startPeriod))
               ? 'selectedRange'
               : ''
           }
+          ${isSameDay(currentDate, startPeriod) ? 'startPeriod' : ''}
+          ${isSameDay(currentDate, endPeriod) ? 'endPeriod' : ''}
           `}
-          onClick={() => {
-            setSelectedDate(cloneDate);
-          }}
-          role="presentation"
         >
-          {format(currentDate, 'd')}
+          <div
+            className={`day ${isSameMonth(currentDate, activeDate) ? '' : 'inactiveDay'} ${
+              isSameDay(currentDate, selectedDate) ? 'selectedDay' : ''
+            }
+          ${isSameDay(currentDate, new Date()) ? 'today' : ''}
+          `}
+            onClick={() => {
+              setSelectedDate(cloneDate);
+            }}
+            role="presentation"
+          >
+            {format(currentDate, 'd')}
+          </div>
         </div>
       );
       currentDate = addDays(currentDate, 1);

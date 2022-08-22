@@ -27,6 +27,21 @@
   color: white;
   background: #3366ff;
   border-radius: 50%;
+  z-index: 1;
+}
+
+.startPeriod {
+  background: -webkit-gradient(linear, right top, left top, color-stop(50%, rgba(245,247,252,1)), color-stop(50%, rgba(255,255,255,1)));
+  background: -o-linear-gradient(right, rgba(245,247,252,1) 50%, rgba(255,255,255,1) 50%);
+  background: linear-gradient(270deg, rgba(245,247,252,1) 50%, rgba(255,255,255,1) 50%);
+  border-radius: 0;
+}
+
+.endPeriod {
+  background: -webkit-gradient(linear, right top, left top, color-stop(50%, rgba(255,255,255,1)), color-stop(50%, rgba(245,247,252,1)));
+  background: -o-linear-gradient(right, rgba(255,255,255,1) 50%, rgba(245,247,252,1) 50%);
+  background: linear-gradient(270deg, rgba(255,255,255,1) 50%, rgba(245,247,252,1) 50%);
+  border-radius: 0;
 }
 
 .weekContainer {
