@@ -2,7 +2,8 @@ import React from 'react';
 import { addMonths, format, subMonths } from 'date-fns';
 import classes from './Header.module.css';
 
-import './styles.css';
+import ChevronLeft from '../Icons/chevron-left';
+import ChevronRight from '../Icons/chevron-right';
 
 const Header = ({ setActiveDate, activeDate }) => (
   <div className={classes.calendarMonthWrapper}>
@@ -11,7 +12,7 @@ const Header = ({ setActiveDate, activeDate }) => (
       onClick={() => setActiveDate(subMonths(activeDate, 1))}
       role="presentation"
     >
-      <div className="chevron is-left w-icon-dropdown-toggle" />
+      <ChevronLeft />
     </div>
     <h2 className={classes.textSizeMedium}>{format(activeDate, 'MMMM yyyy')}</h2>
     <div
@@ -19,7 +20,7 @@ const Header = ({ setActiveDate, activeDate }) => (
       onClick={() => setActiveDate(addMonths(activeDate, 1))}
       role="presentation"
     >
-      <div className="chevron is-right w-icon-dropdown-toggle" />
+      <ChevronRight />
     </div>
   </div>
 );

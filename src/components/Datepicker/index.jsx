@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import classNames from 'classnames';
 
 import Sidebar from '../Sidebar';
 import Calendar from '../Calendar';
-import './styles.css';
 import classes from './Datepicker.module.css';
 import Footer from '../Footer';
+import ChevronDown from '../Icons/chevron-down';
 
 const Datepicker = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -41,10 +40,7 @@ const Datepicker = () => {
                   <div className={classes.dropdownOverlay} style={{ display: 'block' }} />
                   <div className={classes.dropdownToggleContent}>
                     <div>Last 7 days</div>
-                    <div
-                      className={classNames(classes.dropdownChevron, classes.wIconDropdownToggle)}
-                      aria-hidden="true"
-                    />
+                    <ChevronDown />
                   </div>
                 </div>
               </div>

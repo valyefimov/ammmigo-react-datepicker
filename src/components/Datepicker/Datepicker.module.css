@@ -163,13 +163,13 @@
     flex-wrap: wrap;
 }
 
-.dropdownChevron {
+.dropdown_chevron {
     position: static;
     margin-right: 0px;
     margin-left: 0.5rem;
 }
 
-.wIconDropdownToggle {
+.w_icon_dropdown_toggle {
     position: absolute;
     top: 0;
     right: 0;
