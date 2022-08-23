@@ -52,9 +52,13 @@ const Dates = ({ activeDate, selectedDate, setSelectedDate, startPeriod, setStar
           <div
             className={classNames(
               style.Day,
-              { [style.DisableDay]: isAfter(new Date(currentDate), new Date(endPeriod)) },
+              { [style.DisableDay]: isAfter(new Date(currentDate), new Date()) },
               { [style.InactiveDay]: !isSameMonth(currentDate, activeDate) },
-              { [style.SelectedDay]: isSameDay(currentDate, selectedDate) && !isAfter(new Date(currentDate), new Date(endPeriod)) },
+              { [style.SelectedDay]:
+                isSameDay(currentDate, selectedDate) && !isAfter(new Date(currentDate), new Date(endPeriod)) ||
+                isSameDay(currentDate, startPeriod) && !isAfter(new Date(currentDate), new Date(endPeriod)) ||
+                isSameDay(currentDate, endPeriod) && !isAfter(new Date(currentDate), new Date(endPeriod))
+              },
               { [style.Today]: isSameDay(currentDate, new Date()) },
             )}
             onClick={() => setDiffDates(cloneDate)}
