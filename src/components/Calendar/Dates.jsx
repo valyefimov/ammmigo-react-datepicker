@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   addDays,
   endOfMonth,
@@ -15,8 +15,29 @@ import classNames from 'classnames';
 
 import style from './Calendar.module.css';
 
+const Dates = ({
+  activeDate,
+  selectedDate,
+  setSelectedDate,
+  startPeriod,
+  setStartPeriod,
+  endPeriod,
+  setEndPeriod,
+  setNamePeriod,
+}) => {
+  const [clicksCount, setClicksCount] = useState(0);
 
-const Dates = ({ activeDate, selectedDate, setSelectedDate, startPeriod, endPeriod }) => {
+  const setDiffDates = (cloneDate) => {
+    setClicksCount(clicksCount + 1);
+    setSelectedDate(cloneDate);
+    setNamePeriod('Custom');
+    if (clicksCount === 0) {
+      setStartPeriod(cloneDate);
+    } else {
+      setEndPeriod(cloneDate);
+      setClicksCount(0);
+    }
+  };
   const generateDatesForCurrentWeek = (date, selectedDate, activeDate) => {
     let currentDate = date;
 
@@ -28,25 +49,38 @@ const Dates = ({ activeDate, selectedDate, setSelectedDate, startPeriod, endPeri
         <div
           key={day}
           className={classNames(
-            { [style.SelectedRange]: isBefore(new Date(currentDate), new Date(endPeriod)) &&
-              isAfter(new Date(currentDate), new Date(startPeriod)) },
-            { [style.StartPeriod]: isSameDay(currentDate, startPeriod) &&
-              isSameDay(currentDate, startPeriod) !== isSameDay(currentDate, endPeriod) },
-            { [style.EndPeriod]: isSameDay(currentDate, endPeriod) &&
-              isSameDay(currentDate, startPeriod) !== isSameDay(currentDate, endPeriod) },
+            {
+              [style.SelectedRange]:
+                isBefore(new Date(currentDate), new Date(endPeriod)) &&
+                isAfter(new Date(currentDate), new Date(startPeriod)) &&
+                isSameMonth(currentDate, activeDate),
+            },
+            {
+              [style.StartPeriod]:
+                isSameDay(currentDate, startPeriod) &&
+                isSameDay(currentDate, startPeriod) !== isSameDay(currentDate, endPeriod),
+            },
+            {
+              [style.EndPeriod]:
+                isSameDay(currentDate, endPeriod) &&
+                isSameDay(currentDate, startPeriod) !== isSameDay(currentDate, endPeriod),
+            }
           )}
         >
           <div
             className={classNames(
               style.Day,
-              { [style.DisableDay]: isAfter(new Date(currentDate), new Date(endPeriod)) },
+              { [style.DisableDay]: isAfter(new Date(currentDate), new Date()) },
               { [style.InactiveDay]: !isSameMonth(currentDate, activeDate) },
-              { [style.SelectedDay]: isSameDay(currentDate, selectedDate) && !isAfter(new Date(currentDate), new Date(endPeriod)) },
-              { [style.Today]: isSameDay(currentDate, new Date()) },
+              {
+                [style.SelectedDay]:
+                  (isSameDay(currentDate, selectedDate) && !isAfter(new Date(currentDate), new Date(endPeriod))) ||
+                  (isSameDay(currentDate, startPeriod) && !isAfter(new Date(currentDate), new Date(endPeriod))) ||
+                  (isSameDay(currentDate, endPeriod) && !isAfter(new Date(currentDate), new Date(endPeriod))),
+              },
+              { [style.Today]: isSameDay(currentDate, new Date()) }
             )}
-            onClick={() => {
-              setSelectedDate(cloneDate);
-            }}
+            onClick={() => setDiffDates(cloneDate)}
             role="presentation"
           >
             {format(currentDate, 'd')}

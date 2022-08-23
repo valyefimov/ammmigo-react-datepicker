@@ -1,8 +1,10 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import style from './Sidebar.module.css';
+import ChevronRight from '../Icons/chevron-right';
 
-const Sidebar = ({ setSelectedDate, setActiveDate, setStartPeriod, setNamePeriod }) => {
+const Sidebar = ({ setSelectedDate, setActiveDate, setStartPeriod, setNamePeriod, namePeriod }) => {
   const today = new Date();
   const yesterday = new Date(today);
   const lastSevenDays = new Date(today);
@@ -14,21 +16,9 @@ const Sidebar = ({ setSelectedDate, setActiveDate, setStartPeriod, setNamePeriod
   lastNinetyDays.setDate(lastNinetyDays.getDate() - 89);
 
   return (
-    <div>
+    <div className={style.NavButtonPosition}>
       <div
-        className={style.NavButton}
-        onClick={() => {
-          setSelectedDate(yesterday);
-          setActiveDate(yesterday);
-          setStartPeriod(yesterday);
-          setNamePeriod('Yesterday');
-        }}
-        role="presentation"
-      >
-        Yesterday
-      </div>
-      <div
-        className={style.NavButton}
+        className={classNames(style.NavButton, { [style.ButtonActive]: namePeriod === 'Today' })}
         onClick={() => {
           setSelectedDate(today);
           setActiveDate(today);
@@ -40,7 +30,19 @@ const Sidebar = ({ setSelectedDate, setActiveDate, setStartPeriod, setNamePeriod
         Today
       </div>
       <div
-        className={style.NavButton}
+        className={classNames(style.NavButton, { [style.ButtonActive]: namePeriod === 'Yesterday' })}
+        onClick={() => {
+          setSelectedDate(yesterday);
+          setActiveDate(yesterday);
+          setStartPeriod(yesterday);
+          setNamePeriod('Yesterday');
+        }}
+        role="presentation"
+      >
+        Yesterday
+      </div>
+      <div
+        className={classNames(style.NavButton, { [style.ButtonActive]: namePeriod === 'Last 7 days' })}
         onClick={() => {
           setSelectedDate(lastSevenDays);
           setActiveDate(lastSevenDays);
@@ -52,7 +54,7 @@ const Sidebar = ({ setSelectedDate, setActiveDate, setStartPeriod, setNamePeriod
         Last 7 days
       </div>
       <div
-        className={style.NavButton}
+        className={classNames(style.NavButton, { [style.ButtonActive]: namePeriod === 'Last 30 days' })}
         onClick={() => {
           setSelectedDate(lastThirtyDays);
           setActiveDate(lastThirtyDays);
@@ -64,7 +66,7 @@ const Sidebar = ({ setSelectedDate, setActiveDate, setStartPeriod, setNamePeriod
         Last 30 days
       </div>
       <div
-        className={style.NavButton}
+        className={classNames(style.NavButton, { [style.ButtonActive]: namePeriod === 'Last 90 days' })}
         onClick={() => {
           setSelectedDate(lastNinetyDays);
           setActiveDate(lastNinetyDays);
@@ -74,6 +76,13 @@ const Sidebar = ({ setSelectedDate, setActiveDate, setStartPeriod, setNamePeriod
         role="presentation"
       >
         Last 90 days
+      </div>
+      <div
+        className={classNames(style.NavButton, { [style.CustomButtonActive]: namePeriod === 'Custom' })}
+        role="presentation"
+      >
+        Custom
+        <ChevronRight />
       </div>
     </div>
   );
