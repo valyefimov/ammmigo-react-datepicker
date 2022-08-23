@@ -60,7 +60,11 @@ const Datepicker = () => {
             />
           </main>
           <footer className={style.Footer}>
-            <button className={style.Btn} type="button">
+            <button
+              className={style.Btn}
+              type="button"
+              onClick={() => setShow(false)}
+            >
               Cancel
             </button>
             <button
