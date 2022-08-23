@@ -29,7 +29,7 @@ const Dates = ({ activeDate, selectedDate, setSelectedDate, startPeriod, endPeri
           key={day}
           className={classNames(
             { [style.SelectedRange]: isBefore(new Date(currentDate), new Date(endPeriod)) &&
-              isAfter(new Date(currentDate), new Date(startPeriod)) },
+              isAfter(new Date(currentDate), new Date(startPeriod)) && isSameMonth(currentDate, activeDate) },
             { [style.StartPeriod]: isSameDay(currentDate, startPeriod) &&
               isSameDay(currentDate, startPeriod) !== isSameDay(currentDate, endPeriod) },
             { [style.EndPeriod]: isSameDay(currentDate, endPeriod) &&

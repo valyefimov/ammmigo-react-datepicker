@@ -19,7 +19,6 @@ const Sidebar = ({ setSelectedDate, setActiveDate, setStartPeriod, setNamePeriod
         className={style.NavButton}
         onClick={() => {
           setSelectedDate(yesterday);
-          setActiveDate(yesterday);
           setStartPeriod(yesterday);
           setNamePeriod('Yesterday');
         }}
@@ -43,7 +42,6 @@ const Sidebar = ({ setSelectedDate, setActiveDate, setStartPeriod, setNamePeriod
         className={style.NavButton}
         onClick={() => {
           setSelectedDate(lastSevenDays);
-          setActiveDate(lastSevenDays);
           setStartPeriod(lastSevenDays);
           setNamePeriod('Last 7 days');
         }}
@@ -55,7 +53,6 @@ const Sidebar = ({ setSelectedDate, setActiveDate, setStartPeriod, setNamePeriod
         className={style.NavButton}
         onClick={() => {
           setSelectedDate(lastThirtyDays);
-          setActiveDate(lastThirtyDays);
           setStartPeriod(lastThirtyDays);
           setNamePeriod('Last 30 days');
         }}
@@ -67,7 +64,6 @@ const Sidebar = ({ setSelectedDate, setActiveDate, setStartPeriod, setNamePeriod
         className={style.NavButton}
         onClick={() => {
           setSelectedDate(lastNinetyDays);
-          setActiveDate(lastNinetyDays);
           setStartPeriod(lastNinetyDays);
           setNamePeriod('Last 90 days');
         }}
