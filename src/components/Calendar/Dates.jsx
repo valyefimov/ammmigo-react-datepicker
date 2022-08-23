@@ -16,7 +16,7 @@ import classNames from 'classnames';
 import style from './Calendar.module.css';
 
 
-const Dates = ({ activeDate, selectedDate, setSelectedDate, startPeriod, setStartPeriod, endPeriod, setEndPeriod, setCustomSelect, setNamePeriod }) => {
+const Dates = ({ activeDate, selectedDate, setSelectedDate, startPeriod, setStartPeriod, endPeriod, setEndPeriod, setNamePeriod }) => {
   const [clicksCount, setClicksCount] = useState(0);
 
   const setDiffDates = (cloneDate) => {

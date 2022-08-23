@@ -12,7 +12,6 @@ const Datepicker = () => {
   const [endPeriod, setEndPeriod] = useState(new Date());
   const [namePeriod, setNamePeriod] = useState('Today');
   const [show, setShow] = useState(false);
-  const [customSelect, setCustomSelect] = useState(false);
 
   return (
     <div className={style.Datepicker}>
@@ -45,8 +44,7 @@ const Datepicker = () => {
               setActiveDate={setActiveDate}
               setStartPeriod={setStartPeriod}
               setNamePeriod={setNamePeriod}
-              customSelect={customSelect}
-              setCustomSelect={setCustomSelect}
+              namePeriod={namePeriod}
             />
             <Calendar
               setActiveDate={setActiveDate}
@@ -57,7 +55,6 @@ const Datepicker = () => {
               setStartPeriod={setStartPeriod}
               endPeriod={endPeriod}
               setEndPeriod={setEndPeriod}
-              setCustomSelect={setCustomSelect}
               setNamePeriod={setNamePeriod}
             />
           </main>

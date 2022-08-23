@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import style from './Sidebar.module.css';
 
-const Sidebar = ({ setSelectedDate, setActiveDate, setStartPeriod, setNamePeriod, customSelect, setCustomSelect }) => {
+const Sidebar = ({ setSelectedDate, setActiveDate, setStartPeriod, setNamePeriod, namePeriod }) => {
   const today = new Date();
   const yesterday = new Date(today);
   const lastSevenDays = new Date(today);
@@ -22,7 +22,6 @@ const Sidebar = ({ setSelectedDate, setActiveDate, setStartPeriod, setNamePeriod
           setSelectedDate(yesterday);
           setStartPeriod(yesterday);
           setNamePeriod('Yesterday');
-          setCustomSelect(false);
         }}
         role="presentation"
       >
@@ -35,7 +34,6 @@ const Sidebar = ({ setSelectedDate, setActiveDate, setStartPeriod, setNamePeriod
           setActiveDate(today);
           setStartPeriod(today);
           setNamePeriod('Today');
-          setCustomSelect(false);
         }}
         role="presentation"
       >
@@ -47,7 +45,6 @@ const Sidebar = ({ setSelectedDate, setActiveDate, setStartPeriod, setNamePeriod
           setSelectedDate(lastSevenDays);
           setStartPeriod(lastSevenDays);
           setNamePeriod('Last 7 days');
-          setCustomSelect(false);
         }}
         role="presentation"
       >
@@ -59,7 +56,6 @@ const Sidebar = ({ setSelectedDate, setActiveDate, setStartPeriod, setNamePeriod
           setSelectedDate(lastThirtyDays);
           setStartPeriod(lastThirtyDays);
           setNamePeriod('Last 30 days');
-          setCustomSelect(false);
         }}
         role="presentation"
       >
@@ -71,14 +67,13 @@ const Sidebar = ({ setSelectedDate, setActiveDate, setStartPeriod, setNamePeriod
           setSelectedDate(lastNinetyDays);
           setStartPeriod(lastNinetyDays);
           setNamePeriod('Last 90 days');
-          setCustomSelect(false);
         }}
         role="presentation"
       >
         Last 90 days
       </div>
       <div
-        className={classNames(style.NavButton, {[style.CustomButtonActive]: customSelect})}
+        className={classNames(style.NavButton, {[style.CustomButtonActive]: namePeriod === 'Custom'})}
         role="presentation"
       >
         Custom
