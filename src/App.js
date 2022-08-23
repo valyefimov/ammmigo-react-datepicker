@@ -1,10 +1,10 @@
 import React from 'react';
 
-import './App.css';
+import style from './App.module.css';
 import Datepicker from './components/Datepicker';
 
 const App = () => (
-  <div className="App">
+  <div className={style.HeaderComponent}>
     <Datepicker />
   </div>
 );

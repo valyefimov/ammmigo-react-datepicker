@@ -1,8 +1,8 @@
 import React from 'react';
 
-import './styles.css';
+import style from './Sidebar.module.css';
 
-const Sidebar = ({ setSelectedDate, setActiveDate, setStartPeriod }) => {
+const Sidebar = ({ setSelectedDate, setActiveDate, setStartPeriod, setNamePeriod }) => {
   const today = new Date();
   const yesterday = new Date(today);
   const lastSevenDays = new Date(today);
@@ -16,55 +16,60 @@ const Sidebar = ({ setSelectedDate, setActiveDate, setStartPeriod }) => {
   return (
     <div>
       <div
-        className="navButton"
+        className={style.NavButton}
         onClick={() => {
           setSelectedDate(yesterday);
           setActiveDate(yesterday);
           setStartPeriod(yesterday);
+          setNamePeriod('Yesterday');
         }}
         role="presentation"
       >
         Yesterday
       </div>
       <div
-        className="navButton"
+        className={style.NavButton}
         onClick={() => {
           setSelectedDate(today);
           setActiveDate(today);
           setStartPeriod(today);
+          setNamePeriod('Today');
         }}
         role="presentation"
       >
         Today
       </div>
       <div
-        className="navButton"
+        className={style.NavButton}
         onClick={() => {
           setSelectedDate(lastSevenDays);
           setActiveDate(lastSevenDays);
           setStartPeriod(lastSevenDays);
+          setNamePeriod('Last 7 days');
         }}
         role="presentation"
       >
         Last 7 days
       </div>
       <div
-        className="navButton"
+        className={style.NavButton}
         onClick={() => {
           setSelectedDate(lastThirtyDays);
           setActiveDate(lastThirtyDays);
           setStartPeriod(lastThirtyDays);
+          setNamePeriod('Last 30 days');
         }}
         role="presentation"
       >
         Last 30 days
       </div>
       <div
-        className="navButton"
+        className={style.NavButton}
         onClick={() => {
           setSelectedDate(lastNinetyDays);
           setActiveDate(lastNinetyDays);
           setStartPeriod(lastNinetyDays);
+          setNamePeriod('Last 90 days');
         }}
         role="presentation"
       >

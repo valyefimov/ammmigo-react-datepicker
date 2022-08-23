@@ -1,0 +1,70 @@
+.Datepicker {
+}
+
+.Wrapper {
+  width: 34.5rem;
+  padding: 0.5rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 3px 3px 0.75rem 0 rgb(40 40 114 / 3%), 0 1px 0.25rem 0 rgb(40 40 114 / 5%);
+  z-index: 3;
+  cursor: default;
+}
+
+.Main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Btn {
+  border: none;
+  background:transparent;
+  cursor: pointer;
+  color: #68686d;
+}
+
+.Primary {
+  color: #4747fc;
+}
+
+.DropdownWrapper {
+  height: 2rem;
+  padding: 0 1.25rem;
+  border-radius: 1rem;
+  color: rgba(42, 42, 58, 0.7);
+  cursor: pointer;
+}
+
+.DropdownWrapper:hover {
+  background-color: #eff2f9;
+  color: #2a2a3a;
+}
+
+.Dropdown {
+  display: flex;
+  padding-top: 0.45rem;
+  padding-bottom: 0.45rem;
+  z-index: 1;
+}
+
+.Modal {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(92, 110, 153, 0.2);
+  backdrop-filter: blur(4px);
+  transform: scale(0);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.Active {
+  transform: scale(1);
+}

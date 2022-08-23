@@ -11,8 +11,10 @@ import {
   startOfMonth,
   startOfWeek,
 } from 'date-fns';
+import classNames from 'classnames';
 
-import './styles.css';
+import style from './Calendar.module.css';
+
 
 const Dates = ({ activeDate, selectedDate, setSelectedDate, startPeriod, endPeriod }) => {
   const generateDatesForCurrentWeek = (date, selectedDate, activeDate) => {
@@ -25,33 +27,23 @@ const Dates = ({ activeDate, selectedDate, setSelectedDate, startPeriod, endPeri
       week.push(
         <div
           key={day}
-          className={`
-          ${
-            isBefore(new Date(currentDate), new Date(endPeriod)) &&
-            isAfter(new Date(currentDate), new Date(startPeriod))
-              ? 'selectedRange'
-              : ''
-          }
-          ${
-            isSameDay(currentDate, startPeriod) &&
-            isSameDay(currentDate, startPeriod) !== isSameDay(currentDate, endPeriod)
-              ? 'startPeriod'
-              : ''
-          }
-          ${
-            isSameDay(currentDate, endPeriod) &&
-            isSameDay(currentDate, startPeriod) !== isSameDay(currentDate, endPeriod)
-              ? 'endPeriod'
-              : ''
-          }
-          `}
+          className={classNames(
+            { [style.SelectedRange]: isBefore(new Date(currentDate), new Date(endPeriod)) &&
+              isAfter(new Date(currentDate), new Date(startPeriod)) },
+            { [style.StartPeriod]: isSameDay(currentDate, startPeriod) &&
+              isSameDay(currentDate, startPeriod) !== isSameDay(currentDate, endPeriod) },
+            { [style.EndPeriod]: isSameDay(currentDate, endPeriod) &&
+              isSameDay(currentDate, startPeriod) !== isSameDay(currentDate, endPeriod) },
+          )}
         >
           <div
-            className={`day ${isSameMonth(currentDate, activeDate) ? '' : 'inactiveDay'} ${
-              isSameDay(currentDate, selectedDate) ? 'selectedDay' : ''
-            }
-          ${isSameDay(currentDate, new Date()) ? 'today' : ''}
-          `}
+            className={classNames(
+              style.Day,
+              { [style.DisableDay]: isAfter(new Date(currentDate), new Date(endPeriod)) },
+              { [style.InactiveDay]: !isSameMonth(currentDate, activeDate) },
+              { [style.SelectedDay]: isSameDay(currentDate, selectedDate) && !isAfter(new Date(currentDate), new Date(endPeriod)) },
+              { [style.Today]: isSameDay(currentDate, new Date()) },
+            )}
             onClick={() => {
               setSelectedDate(cloneDate);
             }}
@@ -67,7 +59,7 @@ const Dates = ({ activeDate, selectedDate, setSelectedDate, startPeriod, endPeri
     const key = format(currentDate, 'd');
 
     return (
-      <div key={key} className="weekContainer">
+      <div key={key} className={style.WeekContainer}>
         {week}
       </div>
     );
