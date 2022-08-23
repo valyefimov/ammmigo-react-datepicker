@@ -31,7 +31,12 @@ const Dates = ({
     setClicksCount(clicksCount + 1);
     setSelectedDate(cloneDate);
     setNamePeriod('Custom');
+    setSelectedDate(cloneDate);
+    if (new Date(cloneDate) > new Date()) {
+      return;
+    }
     if (clicksCount === 0) {
+      setClicksCount(clicksCount + 1);
       setStartPeriod(cloneDate);
     } else {
       setEndPeriod(cloneDate);
@@ -57,8 +62,10 @@ const Dates = ({
             },
             {
               [style.StartPeriod]:
-                isSameDay(currentDate, startPeriod) &&
-                isSameDay(currentDate, startPeriod) !== isSameDay(currentDate, endPeriod),
+                (isSameDay(currentDate, startPeriod) &&
+                  isSameDay(currentDate, startPeriod) !== isSameDay(currentDate, endPeriod)) ||
+                (isSameDay(currentDate, startPeriod) && !isAfter(new Date(currentDate), new Date())) ||
+                (isSameDay(currentDate, endPeriod) && !isAfter(new Date(currentDate), new Date())),
             },
             {
               [style.EndPeriod]:

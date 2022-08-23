@@ -14,7 +14,7 @@
 .NavIcon {
   position: relative;
   display: flex;
-  padding: 0px;
+  padding: 0;
   justify-content: center;
   align-items: center;
   border-radius: 100rem;

@@ -47,6 +47,7 @@ const Datepicker = () => {
               setSelectedDate={setSelectedDate}
               setActiveDate={setActiveDate}
               setStartPeriod={setStartPeriod}
+              setEndPeriod={setEndPeriod}
               setNamePeriod={setNamePeriod}
               namePeriod={namePeriod}
             />
@@ -63,7 +64,7 @@ const Datepicker = () => {
             />
           </main>
           <footer className={style.Footer}>
-            <button className={style.Btn} type="button">
+            <button className={style.Btn} type="button" onClick={() => setShow(false)}>
               Cancel
             </button>
             <button className={classNames(style.Btn, style.Primary)} type="submit" onClick={() => setShow(false)}>

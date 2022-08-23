@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import style from './Sidebar.module.css';
 import ChevronRight from '../Icons/chevron-right';
 
-const Sidebar = ({ setSelectedDate, setActiveDate, setStartPeriod, setNamePeriod, namePeriod }) => {
+const Sidebar = ({ setSelectedDate, setActiveDate, setStartPeriod, setNamePeriod, namePeriod, setEndPeriod }) => {
   const today = new Date();
   const yesterday = new Date(today);
   const lastSevenDays = new Date(today);
@@ -24,6 +24,7 @@ const Sidebar = ({ setSelectedDate, setActiveDate, setStartPeriod, setNamePeriod
           setActiveDate(today);
           setStartPeriod(today);
           setNamePeriod('Today');
+          setEndPeriod(today);
         }}
         role="presentation"
       >
@@ -36,6 +37,7 @@ const Sidebar = ({ setSelectedDate, setActiveDate, setStartPeriod, setNamePeriod
           setActiveDate(yesterday);
           setStartPeriod(yesterday);
           setNamePeriod('Yesterday');
+          setEndPeriod(today);
         }}
         role="presentation"
       >
@@ -48,6 +50,7 @@ const Sidebar = ({ setSelectedDate, setActiveDate, setStartPeriod, setNamePeriod
           setActiveDate(lastSevenDays);
           setStartPeriod(lastSevenDays);
           setNamePeriod('Last 7 days');
+          setEndPeriod(today);
         }}
         role="presentation"
       >
@@ -60,6 +63,7 @@ const Sidebar = ({ setSelectedDate, setActiveDate, setStartPeriod, setNamePeriod
           setActiveDate(lastThirtyDays);
           setStartPeriod(lastThirtyDays);
           setNamePeriod('Last 30 days');
+          setEndPeriod(today);
         }}
         role="presentation"
       >
@@ -72,6 +76,7 @@ const Sidebar = ({ setSelectedDate, setActiveDate, setStartPeriod, setNamePeriod
           setActiveDate(lastNinetyDays);
           setStartPeriod(lastNinetyDays);
           setNamePeriod('Last 90 days');
+          setEndPeriod(today);
         }}
         role="presentation"
       >

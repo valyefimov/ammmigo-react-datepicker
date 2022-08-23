@@ -30,14 +30,13 @@
   cursor: pointer;
 }
 
-.ButtonActive{
+.ButtonActive {
   background-color: #f5f7fc;
-  background-image: url("check.svg");
+  background-image: url('check.svg');
   background-repeat: no-repeat;
   background-position-x: 138px;
   background-position-y: center;
-  background-size: 30px
-;
+  background-size: 30px;
 }
 
 .CustomButtonActive {
@@ -46,13 +45,13 @@
 
 @media (max-width: 580px) {
   .NavButton {
-    font-size: 15px;
+    font-size: 13px;
     padding: 0.25rem 0.5rem;
   }
   .NavButtonPosition {
     flex-basis: 7rem;
   }
-  .ButtonActive{
+  .ButtonActive {
     background-position-x: 82px;
     background-size: 21px;
   }
