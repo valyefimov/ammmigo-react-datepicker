@@ -22,6 +22,11 @@ const Dates = ({ activeDate, selectedDate, setSelectedDate, startPeriod, setStar
   const setDiffDates = (cloneDate) => {
     setNamePeriod('Custom');
     setSelectedDate(cloneDate);
+
+    if(new Date(cloneDate) > new Date()){
+      return;
+    }
+
     if(clicksCount === 0) {
       setClicksCount(clicksCount + 1);
       setStartPeriod(cloneDate);
