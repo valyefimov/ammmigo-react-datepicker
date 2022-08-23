@@ -1,0 +1,41 @@
+.Calendar {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Weekday {
+  width: 45px;
+  height: 45px;
+  font-size: 12px;
+  color: rgba(39, 39, 46, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Day {
+  width: 45px;
+  height: 45px;
+  color: #646779;
+  font-size: 18px;
+}
+
+.DayButton {
+  color: #646779;
+}
+
+.DayButton:hover {
+  border-radius: 50%;
+  background-color: #eff2f9;
+  color: #323240;
+}
+
+.DaySelected {
+  background-color: #f5f7fc;
+}
+
+.StartOrEndDay {
+  background-color: #4747fc;
+  color: white;
+  border-radius: 50%;
+}
