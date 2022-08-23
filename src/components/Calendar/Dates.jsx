@@ -15,16 +15,16 @@ import classNames from 'classnames';
 
 import style from './Calendar.module.css';
 
-
 const Dates = ({ activeDate, selectedDate, setSelectedDate, startPeriod, setStartPeriod, endPeriod, setEndPeriod, setNamePeriod }) => {
   const [currentSelectedDate, setCurrentSelectedDate ] = useState(new Date());
 
   const setDiffDates = (cloneDate) => {
-    setNamePeriod('Custom');
-    setSelectedDate(cloneDate);
-    if(new Date(cloneDate) > new Date()){
+    if(new Date(cloneDate) > new Date()) {
       return;
     }
+
+    setNamePeriod('Custom');
+    setSelectedDate(cloneDate);
 
     const [start, end] = [cloneDate, currentSelectedDate].sort((a, b) => a - b)
 
