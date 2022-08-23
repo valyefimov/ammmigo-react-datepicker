@@ -9,3 +9,7 @@
 .NavButton:hover {
   background: #efefef;
 }
+
+.CustomButtonActive {
+  background-color: #f5f7fc;
+}

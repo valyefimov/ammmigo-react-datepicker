@@ -16,14 +16,16 @@ import classNames from 'classnames';
 import style from './Calendar.module.css';
 
 
-const Dates = ({ activeDate, selectedDate, setSelectedDate, startPeriod, setStartPeriod, endPeriod, setEndPeriod }) => {
+const Dates = ({ activeDate, selectedDate, setSelectedDate, startPeriod, setStartPeriod, endPeriod, setEndPeriod, setCustomSelect, setNamePeriod }) => {
   const [clicksCount, setClicksCount] = useState(0);
 
   const setDiffDates = (cloneDate) => {
     setClicksCount(clicksCount + 1);
     setSelectedDate(cloneDate);
+    setCustomSelect(true);
+    setNamePeriod('Custom');
     if(clicksCount === 0) {
-      setStartPeriod(cloneDate)
+      setStartPeriod(cloneDate);
     } else {
       setEndPeriod(cloneDate);
       setClicksCount(0);

@@ -6,7 +6,7 @@ import WeekDayNames from './WeekDayNames';
 import Dates from './Dates';
 import style from './Calendar.module.css';
 
-const Calendar = ({ setActiveDate, activeDate, selectedDate, setSelectedDate, setStartPeriod, startPeriod, endPeriod, setEndPeriod }) => (
+const Calendar = ({ setActiveDate, activeDate, selectedDate, setSelectedDate, setStartPeriod, startPeriod, endPeriod, setEndPeriod, setCustomSelect, setNamePeriod }) => (
   <section className={style.Wrapper}>
     <Header setActiveDate={setActiveDate} activeDate={activeDate} />
     <WeekDayNames activeDate={activeDate} />
@@ -18,6 +18,8 @@ const Calendar = ({ setActiveDate, activeDate, selectedDate, setSelectedDate, se
       startPeriod={startPeriod}
       endPeriod={endPeriod}
       setEndPeriod={setEndPeriod}
+      setCustomSelect={setCustomSelect}
+      setNamePeriod={setNamePeriod}
     />
     <div className={style.Period}>{`${format(new Date(startPeriod), 'PP')} — ${format(new Date(endPeriod), 'PP')}`}</div>
   </section>
