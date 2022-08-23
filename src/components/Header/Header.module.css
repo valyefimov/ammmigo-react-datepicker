@@ -21,6 +21,7 @@
   color: #646779;
   width: 2rem;
   height: 2rem;
+  cursor: pointer;
 }
 
 .NavIcon:hover {
