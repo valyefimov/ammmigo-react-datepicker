@@ -1,9 +1,12 @@
 import React from 'react';
-import './App.css';
+
+import style from './App.module.css';
 import Datepicker from './components/Datepicker';
 
-function App() {
-  return <Datepicker />;
-}
+const App = () => (
+  <div className={style.HeaderComponent}>
+    <Datepicker />
+  </div>
+);
 
 export default App;

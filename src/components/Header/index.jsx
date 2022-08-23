@@ -1,18 +1,18 @@
 import React from 'react';
-import './styles.css';
+import { addMonths, format, subMonths } from 'date-fns';
 
-function Header() {
-  return (
-    <div className="calendar_month-wrapper">
-      <a href className="icon-button is-small w-inline-block" tabIndex={0}>
-        <div className="chevron is-left w-icon-dropdown-toggle" />
-      </a>
-      <div className="text-size-medium">April 2022</div>
-      <a href className="icon-button is-small w-inline-block" tabIndex={0}>
-        <div className="chevron is-right w-icon-dropdown-toggle" />
-      </a>
+import style from './Header.module.css';
+
+const Header = ({ setActiveDate, activeDate }) => (
+  <div className={style.Header}>
+    <div className={style.NavIcon} onClick={() => setActiveDate(subMonths(activeDate, 1))} role="presentation">
+      {'<'}
     </div>
-  );
-}
+    <h2 className={style.CurrentMonth}>{format(activeDate, 'MMMM yyyy')}</h2>
+    <div className={style.NavIcon} onClick={() => setActiveDate(addMonths(activeDate, 1))} role="presentation">
+      {'>'}
+    </div>
+  </div>
+);
 
 export default Header;

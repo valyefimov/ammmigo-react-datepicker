@@ -1,0 +1,15 @@
+.NavButton {
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.NavButton:hover {
+  background: #efefef;
+}
+
+.CustomButtonActive {
+  background-color: #f5f7fc;
+}
