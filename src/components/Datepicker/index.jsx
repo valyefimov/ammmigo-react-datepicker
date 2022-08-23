@@ -9,7 +9,7 @@ const Datepicker = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [activeDate, setActiveDate] = useState(new Date());
   const [startPeriod, setStartPeriod] = useState(new Date());
-  const [endPeriod] = useState(new Date());
+  const [endPeriod, setEndPeriod] = useState(new Date());
   const [namePeriod, setNamePeriod] = useState('Today');
   const [show, setShow] = useState(false);
 
@@ -51,7 +51,9 @@ const Datepicker = () => {
               selectedDate={selectedDate}
               setSelectedDate={setSelectedDate}
               startPeriod={startPeriod}
+              setStartPeriod={setStartPeriod}
               endPeriod={endPeriod}
+              setEndPeriod={setEndPeriod}
             />
           </main>
           <footer className={style.Footer}>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   addDays,
   endOfMonth,
@@ -16,7 +16,20 @@ import classNames from 'classnames';
 import style from './Calendar.module.css';
 
 
-const Dates = ({ activeDate, selectedDate, setSelectedDate, startPeriod, endPeriod }) => {
+const Dates = ({ activeDate, selectedDate, setSelectedDate, startPeriod, setStartPeriod, endPeriod, setEndPeriod }) => {
+  const [clicksCount, setClicksCount] = useState(0);
+
+  const setDiffDates = (cloneDate) => {
+    setClicksCount(clicksCount + 1);
+    setSelectedDate(cloneDate);
+    if(clicksCount === 0) {
+      setStartPeriod(cloneDate)
+    } else {
+      setEndPeriod(cloneDate);
+      setClicksCount(0);
+    }
+  }
+
   const generateDatesForCurrentWeek = (date, selectedDate, activeDate) => {
     let currentDate = date;
 
@@ -44,9 +57,7 @@ const Dates = ({ activeDate, selectedDate, setSelectedDate, startPeriod, endPeri
               { [style.SelectedDay]: isSameDay(currentDate, selectedDate) && !isAfter(new Date(currentDate), new Date(endPeriod)) },
               { [style.Today]: isSameDay(currentDate, new Date()) },
             )}
-            onClick={() => {
-              setSelectedDate(cloneDate);
-            }}
+            onClick={() => setDiffDates(cloneDate)}
             role="presentation"
           >
             {format(currentDate, 'd')}
