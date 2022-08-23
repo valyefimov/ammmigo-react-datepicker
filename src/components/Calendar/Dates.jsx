@@ -17,23 +17,20 @@ import style from './Calendar.module.css';
 
 
 const Dates = ({ activeDate, selectedDate, setSelectedDate, startPeriod, setStartPeriod, endPeriod, setEndPeriod, setNamePeriod }) => {
-  const [clicksCount, setClicksCount] = useState(0);
+  const [currentSelectedDate, setCurrentSelectedDate ] = useState(new Date());
 
   const setDiffDates = (cloneDate) => {
     setNamePeriod('Custom');
     setSelectedDate(cloneDate);
-
     if(new Date(cloneDate) > new Date()){
       return;
     }
 
-    if(clicksCount === 0) {
-      setClicksCount(clicksCount + 1);
-      setStartPeriod(cloneDate);
-    } else {
-      setEndPeriod(cloneDate);
-      setClicksCount(0);
-    }
+    const [start, end] = [cloneDate, currentSelectedDate].sort((a, b) => a - b)
+
+    setCurrentSelectedDate(cloneDate)
+    setStartPeriod(start);
+    setEndPeriod(end);
   }
 
   const generateDatesForCurrentWeek = (date, selectedDate, activeDate) => {
