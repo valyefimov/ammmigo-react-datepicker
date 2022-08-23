@@ -1,16 +1,36 @@
 .Header {
   display: flex;
+  height: 3rem;
+  justify-content: space-between;
   align-items: center;
 }
 
 .CurrentMonth {
-  margin: 20px 24px;
-  font-size: 24px;
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin: 0;
 }
 
 .NavIcon {
-  width: 20px;
-  height: 20px;
-  padding: 8px;
+  position: relative;
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100rem;
+  color: #646779;
+  width: 2rem;
+  height: 2rem;
   cursor: pointer;
+}
+
+.NavIcon:hover {
+  background-color: #eff2f9;
+  color: #323240;
+}
+
+@media (max-width: 580px) {
+  .CurrentMonth {
+    font-size: 16px;
+  }
 }

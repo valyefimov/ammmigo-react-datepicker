@@ -1,8 +1,10 @@
 .Wrapper {
   font-size: 18px;
+  margin: 0 auto;
 }
 
 .Day {
+  color: #646779;
   height: 3rem;
   width: 3rem;
   cursor: pointer;
@@ -10,6 +12,11 @@
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+}
+
+.Day:hover {
+  background-color: #eff2f9;
+  color: #323240;
 }
 
 .SelectedRange {
@@ -22,7 +29,7 @@
 }
 
 .DisableDay {
-  color: #9e9e9e;
+  color: #646779;
 }
 
 .Today {
@@ -38,16 +45,28 @@
 }
 
 .StartPeriod {
-  background: -webkit-gradient(linear, right top, left top, color-stop(50%, rgba(245,247,252,1)), color-stop(50%, rgba(255,255,255,1)));
-  background: -o-linear-gradient(right, rgba(245,247,252,1) 50%, rgba(255,255,255,1) 50%);
-  background: linear-gradient(270deg, rgba(245,247,252,1) 50%, rgba(255,255,255,1) 50%);
+  background: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    color-stop(50%, rgba(245, 247, 252, 1)),
+    color-stop(50%, rgba(255, 255, 255, 1))
+  );
+  background: -o-linear-gradient(right, rgba(245, 247, 252, 1) 50%, rgba(255, 255, 255, 1) 50%);
+  background: linear-gradient(270deg, rgba(245, 247, 252, 1) 50%, rgba(255, 255, 255, 1) 50%);
   border-radius: 0;
 }
 
 .EndPeriod {
-  background: -webkit-gradient(linear, right top, left top, color-stop(50%, rgba(255,255,255,1)), color-stop(50%, rgba(245,247,252,1)));
-  background: -o-linear-gradient(right, rgba(255,255,255,1) 50%, rgba(245,247,252,1) 50%);
-  background: linear-gradient(270deg, rgba(255,255,255,1) 50%, rgba(245,247,252,1) 50%);
+  background: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    color-stop(50%, rgba(255, 255, 255, 1)),
+    color-stop(50%, rgba(245, 247, 252, 1))
+  );
+  background: -o-linear-gradient(right, rgba(255, 255, 255, 1) 50%, rgba(245, 247, 252, 1) 50%);
+  background: linear-gradient(270deg, rgba(255, 255, 255, 1) 50%, rgba(245, 247, 252, 1) 50%);
   border-radius: 0;
 }
 
@@ -63,11 +82,51 @@
 }
 
 .WeekNames {
-  color: #9e9e9e;
-  cursor: default;
+  display: flex;
+  width: 3rem;
+  height: 3rem;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  color: rgba(39, 39, 46, 0.7);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.PeriodPosition {
+  display: flex;
+  margin-right: -0.5rem;
+  margin-left: -0.5rem;
+  padding: 1rem 0.5rem 1rem 1.5rem;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .Period {
-  display: flex;
-  margin-left: 12px;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 580px) {
+  .Period {
+    font-size: 10px;
+  }
+  .Wrapper {
+    width: 13rem;
+    margin-left: 6px;
+  }
+  .WeekContainer {
+    font-size: 14px;
+  }
+  .WeekNames {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 10px;
+  }
+  .Day {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .PeriodPosition {
+    padding: 0.5rem 0.25rem 0.5rem 0.75rem;
+  }
 }

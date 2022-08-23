@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import Sidebar from '../Sidebar';
 import Calendar from '../Calendar';
 import style from './Datepicker.module.css';
+import ChevronDown from '../Icons/chevron-down';
 
 const Datepicker = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -23,19 +24,22 @@ const Datepicker = () => {
       >
         <div className={style.Dropdown}>
           <div>{namePeriod}</div>
+          <div className={style.ChevronPosition}>
+            <ChevronDown />
+          </div>
         </div>
       </div>
 
       <div
-        className={classNames(style.Modal, {[style.Active]: show})}
+        className={classNames(style.Modal, { [style.Active]: show })}
         onClick={() => setShow(false)}
         onKeyDown={() => setShow(false)}
         role="presentation"
       >
         <div
           className={style.Wrapper}
-          onClick={e => e.stopPropagation()}
-          onKeyDown={e => e.stopPropagation()}
+          onClick={(e) => e.stopPropagation()}
+          onKeyDown={(e) => e.stopPropagation()}
           role="presentation"
         >
           <main className={style.Main}>
@@ -60,18 +64,10 @@ const Datepicker = () => {
             />
           </main>
           <footer className={style.Footer}>
-            <button
-              className={style.Btn}
-              type="button"
-              onClick={() => setShow(false)}
-            >
+            <button className={style.Btn} type="button" onClick={() => setShow(false)}>
               Cancel
             </button>
-            <button
-              className={classNames(style.Btn, style.Primary)}
-              type="submit"
-              onClick={() => setShow(false)}
-            >
+            <button className={classNames(style.Btn, style.Primary)} type="submit" onClick={() => setShow(false)}>
               Apply
             </button>
           </footer>
