@@ -20,11 +20,10 @@ const Dates = ({ activeDate, selectedDate, setSelectedDate, startPeriod, setStar
   const [clicksCount, setClicksCount] = useState(0);
 
   const setDiffDates = (cloneDate) => {
-    setClicksCount(clicksCount + 1);
-    setSelectedDate(cloneDate);
-    setCustomSelect(true);
     setNamePeriod('Custom');
+    setSelectedDate(cloneDate);
     if(clicksCount === 0) {
+      setClicksCount(clicksCount + 1);
       setStartPeriod(cloneDate);
     } else {
       setEndPeriod(cloneDate);
@@ -58,8 +57,8 @@ const Dates = ({ activeDate, selectedDate, setSelectedDate, startPeriod, setStar
               { [style.InactiveDay]: !isSameMonth(currentDate, activeDate) },
               { [style.SelectedDay]:
                 isSameDay(currentDate, selectedDate) && !isAfter(new Date(currentDate), new Date(endPeriod)) ||
-                isSameDay(currentDate, startPeriod) && !isAfter(new Date(currentDate), new Date(endPeriod)) ||
-                isSameDay(currentDate, endPeriod) && !isAfter(new Date(currentDate), new Date(endPeriod))
+                isSameDay(currentDate, startPeriod) && !isAfter(new Date(currentDate), new Date()) ||
+                isSameDay(currentDate, endPeriod) && !isAfter(new Date(currentDate), new Date())
               },
               { [style.Today]: isSameDay(currentDate, new Date()) },
             )}

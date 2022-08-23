@@ -43,6 +43,7 @@ const Datepicker = () => {
               setSelectedDate={setSelectedDate}
               setActiveDate={setActiveDate}
               setStartPeriod={setStartPeriod}
+              setEndPeriod={setEndPeriod}
               setNamePeriod={setNamePeriod}
               namePeriod={namePeriod}
             />
