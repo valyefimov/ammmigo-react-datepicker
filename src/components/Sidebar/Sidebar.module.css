@@ -56,3 +56,7 @@
     background-size: 21px;
   }
 }
+
+.CustomButtonActive {
+  background-color: #f5f7fc;
+}
