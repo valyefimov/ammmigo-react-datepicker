@@ -5,14 +5,14 @@ import ChevronRightIcon from '../Icons/ChevronRightIcon';
 
 import style from './CalendarHeader.module.css';
 
-const CalendarHeader = () => {
+const CalendarHeader = ({ onPrev, onNext }) => {
   return (
     <div className={style.Header}>
-      <Button className={style.Button}>
+      <Button className={style.Button} onClick={onPrev}>
         <ChevronLeftIcon />
       </Button>
       April 2022
-      <Button className={style.Button}>
+      <Button className={style.Button} onClick={onNext}>
         <ChevronRightIcon />
       </Button>
     </div>
