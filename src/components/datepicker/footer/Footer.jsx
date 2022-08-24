@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 
-import Index from './Button';
+import Index from '../button';
 
 import style from './Footer.module.css';
 

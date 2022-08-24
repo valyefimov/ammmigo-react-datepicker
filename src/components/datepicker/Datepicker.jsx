@@ -4,21 +4,24 @@ import classNames from 'classnames';
 // import Sidebar from '../Sidebar';
 // import Calendar from '../Calendar';
 import style from './Datepicker.module.css';
-import SideMenu from './SideMenu';
-import Footer from './Footer';
-import CalendarCard from './CalendarCard';
+import SideMenu from './sideMenu/SideMenu';
+import Footer from './footer/Footer';
+import CalendarCard from './calendar/CalendarCard';
+import { DatepickerProvider } from "./state/datepicker";
 // import ChevronDown from '../Icons/chevron-down';
 
 const Datepicker = () => (
-  <div className={style.Modal}>
-    <div className={style.Container}>
-      <div className={style.Content}>
-        <SideMenu />
-        <CalendarCard />
+  <DatepickerProvider>
+    <div className={style.Modal}>
+      <div className={style.Container}>
+        <div className={style.Content}>
+          <SideMenu />
+          <CalendarCard />
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </div>
-  </div>
+  </DatepickerProvider>
 );
 // const [selectedDate, setSelectedDate] = useState(new Date());
 // const [activeDate, setActiveDate] = useState(new Date());

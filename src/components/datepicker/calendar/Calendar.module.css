@@ -18,23 +18,34 @@
   height: 45px;
   color: #646779;
   font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1px;
 }
 
-.DayButton {
-  color: #646779;
-}
-
-.DayButton:hover {
+.Today {
+  border: 1px solid #4747fc;
   border-radius: 50%;
-  background-color: #eff2f9;
-  color: #323240;
 }
 
 .DaySelected {
   background-color: #f5f7fc;
 }
 
-.StartOrEndDay {
+.DayButton {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  color: #646779;
+}
+
+.DayButton:hover {
+  background-color: #eff2f9;
+  color: #323240;
+}
+
+.StartOrEndDay .DayButton {
   background-color: #4747fc;
   color: white;
   border-radius: 50%;
