@@ -39,7 +39,7 @@ const SideMenu = () => {
     },
     {
       title: 'Last 7 days',
-      isActive: differenceInDays(endDate, startDate) === 7 && isToday(endDate),
+      isActive: differenceInDays(endDate, startDate) === 6 && isYesterday(endDate),
       onClick: () => {
         const today = new Date();
 
@@ -50,7 +50,7 @@ const SideMenu = () => {
     },
     {
       title: 'Last 30 days',
-      isActive: differenceInDays(endDate, startDate) === 30 && isToday(endDate),
+      isActive: differenceInDays(endDate, startDate) === 29 && isYesterday(endDate),
       onClick: () => {
         const today = new Date();
 
@@ -61,7 +61,7 @@ const SideMenu = () => {
     },
     {
       title: 'Last 90 days',
-      isActive: differenceInDays(endDate, startDate) === 90 && isToday(endDate),
+      isActive: differenceInDays(endDate, startDate) === 89 && isYesterday(endDate),
       onClick: () => {
         const today = new Date();
 

@@ -4,7 +4,7 @@ import format from 'date-fns/format';
 import Button from '../button';
 import ChevronLeftIcon from '../icons/ChevronLeftIcon';
 import ChevronRightIcon from '../icons/ChevronRightIcon';
-import { useDatepicker } from "../state/datepicker";
+import { useDatepicker } from '../state/datepicker';
 
 import style from './CalendarHeader.module.css';
 
