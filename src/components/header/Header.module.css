@@ -1,0 +1,31 @@
+.Header {
+  position: sticky;
+  top: 0;
+  background-color: #f6f8fd;
+  height: 46px;
+  left: 0;
+  right: 0;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+}
+
+.Dropdown {
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 16px;
+  height: 32px;
+}
+
+.Dropdown svg {
+  margin-left: 18px;
+}
+
+.Dropdown:hover {
+  background-color: #eff2f9;
+  color: #2a2a3a;
+}

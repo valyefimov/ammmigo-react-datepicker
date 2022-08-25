@@ -1,0 +1,13 @@
+.CalendarCard {
+  display: flex;
+  flex-direction: column;
+  width: 315px;
+  margin: auto;
+  box-sizing: content-box;
+}
+
+@media screen and (min-width: 540px) {
+  .CalendarCard {
+    padding: 8px 15px;
+  }
+}

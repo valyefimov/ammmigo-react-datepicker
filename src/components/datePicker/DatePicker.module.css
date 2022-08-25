@@ -1,0 +1,43 @@
+.Modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  outline: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #dee2eb;
+  box-shadow: 3px 3px 0.75rem 0 rgb(40 40 114 / 3%), 0 1px 0.25rem 0 rgb(40 40 114 / 5%);
+}
+
+.ModalOpen {
+  display: block;
+}
+
+.Container {
+  max-width: 350px;
+  margin: 20px auto;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+}
+
+.Content {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 540px) {
+  .Container {
+    max-width: 515px;
+  }
+
+  .Content {
+    flex-direction: row;
+  }
+}
