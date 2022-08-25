@@ -1,36 +1,31 @@
 .Header {
+  position: sticky;
+  top: 0;
+  background-color: #f6f8fd;
+  height: 46px;
+  left: 0;
+  right: 0;
+  padding: 0 24px;
   display: flex;
-  height: 3rem;
-  justify-content: space-between;
   align-items: center;
 }
 
-.CurrentMonth {
-  font-size: 1.125rem;
-  font-weight: 400;
-  margin: 0;
-}
-
-.NavIcon {
-  position: relative;
+.Dropdown {
+  padding: 5px 20px;
   display: flex;
-  padding: 0;
-  justify-content: center;
   align-items: center;
-  border-radius: 100rem;
-  color: #646779;
-  width: 2rem;
-  height: 2rem;
+  border: none;
+  background: none;
   cursor: pointer;
+  border-radius: 16px;
+  height: 32px;
 }
 
-.NavIcon:hover {
+.Dropdown svg {
+  margin-left: 18px;
+}
+
+.Dropdown:hover {
   background-color: #eff2f9;
-  color: #323240;
-}
-
-@media (max-width: 580px) {
-  .CurrentMonth {
-    font-size: 16px;
-  }
+  color: #2a2a3a;
 }

@@ -9,6 +9,7 @@ import startOfYesterday from 'date-fns/startOfYesterday';
 import { useDatepicker } from '../state/datepicker';
 import style from './SideMenu.module.css';
 import TickIcon from '../icons/TickIcon';
+import ChevronRightIcon from '../icons/ChevronRightIcon';
 
 const SideMenu = () => {
   const { startDate, endDate, setStartDate, setEndDate, setSelectedMonth, isCustomRange, setIsCustomRange } =
@@ -91,7 +92,7 @@ const SideMenu = () => {
           className={classNames(style.Button, { [style.ButtonActive]: button.isActive })}
         >
           {button.title}
-          <TickIcon />
+          {isCustomRange ? <ChevronRightIcon /> : <TickIcon />}
         </button>
       ))}
     </div>
