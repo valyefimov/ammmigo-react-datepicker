@@ -13,11 +13,11 @@ const CalendarHeader = () => {
 
   return (
     <div className={style.Header}>
-      <Button className={style.Button} onClick={selectNextMonth}>
+      <Button className={style.Button} onClick={selectPrevMonth}>
         <ChevronLeftIcon />
       </Button>
       {format(selectedMonth, 'LLLL uuuu')}
-      <Button className={style.Button} onClick={selectPrevMonth}>
+      <Button className={style.Button} onClick={selectNextMonth}>
         <ChevronRightIcon />
       </Button>
     </div>

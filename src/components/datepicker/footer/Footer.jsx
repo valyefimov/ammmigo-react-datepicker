@@ -6,9 +6,13 @@ import Index from '../button';
 import style from './Footer.module.css';
 
 const Footer = () => {
+  const [show, setShow] = useState(false);
+
   return (
     <div className={style.Footer}>
-      <Index type="grey">Cancel</Index>
+      <Index type="grey" onClick={() => setShow(false)}>
+        Cancel
+      </Index>
       <Index type="primary">Apply</Index>
     </div>
   );

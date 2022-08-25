@@ -1,28 +1,59 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 
-// import Sidebar from '../Sidebar';
-// import Calendar from '../Calendar';
 import style from './Datepicker.module.css';
 import SideMenu from './sideMenu/SideMenu';
 import Footer from './footer/Footer';
 import CalendarCard from './calendar/CalendarCard';
-import { DatepickerProvider } from "./state/datepicker";
-// import ChevronDown from '../Icons/chevron-down';
+import { DatepickerProvider } from './state/datepicker';
+import ChevronDown from '../Icons/chevron-down';
 
-const Datepicker = () => (
-  <DatepickerProvider>
-    <div className={style.Modal}>
-      <div className={style.Container}>
-        <div className={style.Content}>
-          <SideMenu />
-          <CalendarCard />
+const Datepicker = () => {
+  const [namePeriod] = useState('Today');
+  const [show, setShow] = useState(false);
+  return (
+    <DatepickerProvider>
+      <div className={style.Datepicker}>
+        <div
+          className={style.DropdownWrapper}
+          onClick={() => setShow(true)}
+          onKeyDown={() => setShow(true)}
+          role="presentation"
+        >
+          <div className={style.Dropdown}>
+            <div>{namePeriod}</div>
+            <div className={style.ChevronPosition}>
+              <ChevronDown />
+            </div>
+          </div>
         </div>
-        <Footer />
+        <div className={style.Modal}>
+          <div className={style.Container}>
+            <div
+              className={classNames(style.Modal, { [style.Active]: show })}
+              onClick={() => setShow(false)}
+              onKeyDown={() => setShow(false)}
+              role="presentation"
+            >
+              <div
+                className={style.Wrapper}
+                onClick={(e) => e.stopPropagation()}
+                onKeyDown={(e) => e.stopPropagation()}
+                role="presentation"
+              >
+                <div className={style.Content}>
+                  <SideMenu />
+                  <CalendarCard />
+                </div>
+                <Footer />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </DatepickerProvider>
-);
+    </DatepickerProvider>
+  );
+};
 // const [selectedDate, setSelectedDate] = useState(new Date());
 // const [activeDate, setActiveDate] = useState(new Date());
 // const [startPeriod, setStartPeriod] = useState(new Date());
