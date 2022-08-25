@@ -24,11 +24,6 @@
   padding: 1px;
 }
 
-.Today {
-  border: 1px solid #4747fc;
-  border-radius: 50%;
-}
-
 .DaySelected {
   background-color: #f5f7fc;
 }
@@ -38,6 +33,10 @@
   width: 100%;
   height: 100%;
   color: #646779;
+}
+
+.Today .DayButton {
+  border: 1px solid #4747fc;
 }
 
 .DayButton:hover {

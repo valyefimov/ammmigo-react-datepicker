@@ -4,7 +4,7 @@ import format from 'date-fns/format';
 import Button from '../button';
 import ChevronLeftIcon from '../icons/ChevronLeftIcon';
 import ChevronRightIcon from '../icons/ChevronRightIcon';
-import { useDatepicker } from "../state/datepicker";
+import { useDatepicker } from '../state/datepicker';
 
 import style from './CalendarHeader.module.css';
 
@@ -13,11 +13,11 @@ const CalendarHeader = () => {
 
   return (
     <div className={style.Header}>
-      <Button className={style.Button} onClick={selectNextMonth}>
+      <Button className={style.Button} onClick={selectPrevMonth}>
         <ChevronLeftIcon />
       </Button>
       {format(selectedMonth, 'LLLL uuuu')}
-      <Button className={style.Button} onClick={selectPrevMonth}>
+      <Button className={style.Button} onClick={selectNextMonth}>
         <ChevronRightIcon />
       </Button>
     </div>

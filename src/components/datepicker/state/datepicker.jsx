@@ -15,6 +15,8 @@ export const useDatepicker = () => {
     endDate,
     setStartDate,
     setEndDate,
+    lastSelectedDate,
+    setLastSelectedDate,
   } = useContext(DatepickerContext);
 
   return {
@@ -26,6 +28,8 @@ export const useDatepicker = () => {
     endDate,
     setStartDate,
     setEndDate,
+    lastSelectedDate,
+    setLastSelectedDate,
   };
 };
 
@@ -36,12 +40,16 @@ export const DatepickerProvider = ({ children }) => {
   );
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
+  // lastSelectedDate is a last clicked date
+  const [lastSelectedDate, setLastSelectedDate] = useState(false);
   const selectNextMonth = () => setSelectedMonth(addMonths(selectedMonth, 1));
   const selectPrevMonth = () => setSelectedMonth(subMonths(selectedMonth, 1));
 
   return (
     <DatepickerContext.Provider
       value={{
+        lastSelectedDate,
+        setLastSelectedDate,
         startDate,
         endDate,
         setStartDate,
