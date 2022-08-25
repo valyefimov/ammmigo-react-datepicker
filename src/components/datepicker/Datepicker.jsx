@@ -5,7 +5,7 @@ import SideMenu from './sideMenu/SideMenu';
 import Footer from './footer/Footer';
 import CalendarCard from './calendar/CalendarCard';
 import { DatepickerProvider } from './state/datepicker';
-import DropDown from 'src/components/datepicker/dropdown/DropDown';
+import DropDown from './dropdown/DropDown';
 
 const Datepicker = () => (
   <DatepickerProvider>
