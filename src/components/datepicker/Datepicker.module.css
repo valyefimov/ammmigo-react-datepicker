@@ -25,6 +25,8 @@
 
 .Content {
   display: flex;
+  justify-content: space-between;
+
 }
 
 .SideMenu {

@@ -14,42 +14,17 @@ const Datepicker = () => {
   return (
     <DatepickerProvider>
       <div className={style.Datepicker}>
-        <div
-          className={style.DropdownWrapper}
-          onClick={() => setShow(true)}
-          onKeyDown={() => setShow(true)}
-          role="presentation"
-        >
-          <div className={style.Dropdown}>
-            <div>{namePeriod}</div>
-            <div className={style.ChevronPosition}>
-              <ChevronDown />
-            </div>
+        <div className={style.Dropdown}>
+          <div>{namePeriod}</div>
+          <div className={style.ChevronPosition}>
+            <ChevronDown />
           </div>
         </div>
-        <div className={style.Modal}>
-          <div className={style.Container}>
-            <div
-              className={classNames(style.Modal, { [style.Active]: show })}
-              onClick={() => setShow(false)}
-              onKeyDown={() => setShow(false)}
-              role="presentation"
-            >
-              <div
-                className={style.Wrapper}
-                onClick={(e) => e.stopPropagation()}
-                onKeyDown={(e) => e.stopPropagation()}
-                role="presentation"
-              >
-                <div className={style.Content}>
-                  <SideMenu />
-                  <CalendarCard />
-                </div>
-                <Footer />
-              </div>
-            </div>
-          </div>
-        </div>
+        {/*<div className={style.Content}>*/}
+        {/*  <SideMenu />*/}
+        {/*  <CalendarCard />*/}
+        {/*</div>*/}
+        {/*<Footer />*/}
       </div>
     </DatepickerProvider>
   );
