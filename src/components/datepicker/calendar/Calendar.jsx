@@ -19,11 +19,16 @@ const Calendar = () => {
   const endDayOfMonth = endOfMonth(selectedMonth).getDate();
   const weeks = getWeeksInMonth(selectedMonth);
   const today = new Date();
+  const tomorrow = new Date(today.getTime() + (24 * 60 * 60 * 1000));
   const isCurrentMonth =
     today.getFullYear() === selectedMonth.getFullYear() && today.getMonth() === selectedMonth.getMonth();
 
   const handleDayClick = (date) => {
     // if date is selected
+    if(date > tomorrow){
+      return;
+    }
+
     if (startDate) {
       if (isSameDay(startDate, date) || isSameDay(endDate, date)) {
         setStartDate(date);
