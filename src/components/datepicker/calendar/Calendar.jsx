@@ -4,6 +4,7 @@ import endOfMonth from 'date-fns/endOfMonth';
 import getWeeksInMonth from 'date-fns/getWeeksInMonth';
 import differenceInDays from 'date-fns/differenceInDays';
 import setDate from 'date-fns/setDate';
+import isSameDay from 'date-fns/isSameDay';
 import classNames from 'classnames';
 
 import Button from '../button';
@@ -24,8 +25,11 @@ const Calendar = () => {
   const handleDayClick = (date) => {
     // if date is selected
     if (startDate) {
-      // if prev. click was on the start date
-      if (lastSelectedDate === startDate) {
+      if (isSameDay(startDate, date) || isSameDay(endDate, date)) {
+        setStartDate(date);
+        setEndDate(date);
+      } else if (lastSelectedDate === startDate) {
+        // if prev. click was on the start date
         // if selected date < start date
         if (differenceInDays(date, startDate) < 0) {
           setStartDate(date);
@@ -76,6 +80,7 @@ const Calendar = () => {
               key={key}
               className={classNames(style.Day, {
                 [style.Today]: isToday,
+                [style.NotCalendarDay]: !displayButton,
                 [style.DaySelected]: differenceInDays(date, startDate) >= 0 && differenceInDays(date, endDate) <= 0,
                 [style.StartOrEndDay]: differenceInDays(date, startDate) === 0 || differenceInDays(date, endDate) === 0,
               })}

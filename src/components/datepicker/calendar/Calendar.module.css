@@ -39,6 +39,10 @@
   border: 1px solid #4747fc;
 }
 
+.NotCalendarDay {
+  background: none;
+}
+
 .DayButton:hover {
   background-color: #eff2f9;
   color: #323240;
