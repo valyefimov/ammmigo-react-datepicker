@@ -3,3 +3,10 @@
   color: #646779;
   font-size: 12px;
 }
+
+@media (max-width: 463px) {
+  .Footer {
+    padding-top: 80px;
+    font-size: 10px;
+  }
+}

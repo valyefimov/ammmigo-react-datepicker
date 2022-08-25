@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import Header from './components/header/Header';
 import Datepicker from './components/datepicker/Datepicker';
+import Header from './components/Header/Header';
 
 const App = () => {
   const [openDatepicker, setOpenDatepicker] = useState(false);

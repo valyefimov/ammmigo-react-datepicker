@@ -64,3 +64,37 @@
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
 }
+
+@media (max-width: 580px) {
+  .Weekday {
+    width: 40px;
+    height: 40px;
+  }
+  .Day {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 474px) {
+  .Weekday {
+    width: 42px;
+    height: 42px;
+  }
+  .Day {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+@media (max-width: 463px) {
+  .Weekday {
+    width: 13%;
+    height: 25%;
+  }
+  .Day {
+    width: 13%;
+    height: 25%;
+  }
+}
+

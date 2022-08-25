@@ -32,3 +32,9 @@
 
 .SideMenu {
 }
+
+@media (max-width: 580px) {
+  .Container {
+    max-width: 475px;
+  }
+}

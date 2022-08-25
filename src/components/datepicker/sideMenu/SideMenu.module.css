@@ -37,3 +37,22 @@
 .ButtonActive svg {
   display: block;
 }
+
+@media (max-width: 580px) {
+  .SideMenu {
+    padding: 10px 5px;
+    flex: 0 0 145px;
+  }
+  .Button{
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 463px) {
+  .SideMenu {
+    flex: 0 0 134px;
+  }
+  .Button{
+    font-size: 14px;
+  }
+}

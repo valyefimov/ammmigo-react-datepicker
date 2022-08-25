@@ -19,3 +19,9 @@
 .Button-grey {
   color: rgba(39, 39, 46, 0.7);
 }
+
+@media (max-width: 580px) {
+  .Button {
+   padding: 3px 4px;
+  }
+}
