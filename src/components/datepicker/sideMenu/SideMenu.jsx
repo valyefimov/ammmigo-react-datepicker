@@ -82,8 +82,6 @@ const SideMenu = () => {
     },
   ];
 
-  const plug = false;
-
   return (
     <div className={style.SideMenu}>
       {buttons.map((button) => (
@@ -94,7 +92,7 @@ const SideMenu = () => {
           className={classNames(style.Button, { [style.ButtonActive]: button.isActive })}
         >
           {button.title}
-          {plug ? <ChevronRightIcon /> : <TickIcon />}
+          {isCustomRange ? <ChevronRightIcon /> : <TickIcon />}
         </button>
       ))}
     </div>
