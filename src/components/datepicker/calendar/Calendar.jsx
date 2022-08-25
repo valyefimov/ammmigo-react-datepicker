@@ -13,7 +13,7 @@ import style from './Calendar.module.css';
 
 const Calendar = () => {
   const weekDays = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
-  const { selectedMonth, startDate, endDate, setStartDate, setEndDate, setLastSelectedDate, lastSelectedDate } =
+  const { selectedMonth, startDate, endDate, setStartDate, setEndDate, setLastSelectedDate, lastSelectedDate, setIsCustomRange } =
     useDatepicker();
   const startDayOfWeek = startOfMonth(selectedMonth).getDay();
   const endDayOfMonth = endOfMonth(selectedMonth).getDate();
@@ -57,6 +57,7 @@ const Calendar = () => {
     }
 
     setLastSelectedDate(date);
+    setIsCustomRange(true);
   };
 
   return (
@@ -82,7 +83,8 @@ const Calendar = () => {
                 [style.Today]: isToday,
                 [style.NotCalendarDay]: !displayButton,
                 [style.DaySelected]: differenceInDays(date, startDate) >= 0 && differenceInDays(date, endDate) <= 0,
-                [style.StartOrEndDay]: differenceInDays(date, startDate) === 0 || differenceInDays(date, endDate) === 0,
+                [style.StartDate]: isSameDay(date, startDate),
+                [style.EndDate]: isSameDay(date, endDate),
               })}
             >
               {displayButton ? (
