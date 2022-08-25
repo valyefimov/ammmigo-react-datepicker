@@ -1,0 +1,11 @@
+.ChevronPosition {
+    margin-top: 3px;
+    margin-left: 10px;
+}
+
+.Dropdown {
+    display: flex;
+    padding-top: 0.45rem;
+    padding-bottom: 0.45rem;
+    z-index: 1;
+}
