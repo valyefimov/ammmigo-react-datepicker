@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import classNames from 'classnames';
+import React from 'react';
 
-import Index from '../button';
-
+import Button from '../button';
 import style from './Footer.module.css';
 
-const Footer = () => {
-  return (
-    <div className={style.Footer}>
-      <Index type="grey">Cancel</Index>
-      <Index type="primary">Apply</Index>
-    </div>
-  );
-};
+const Footer = ({ onCancel, onApply }) => (
+  <div className={style.Footer}>
+    <Button type="grey" onClick={onCancel}>
+      Cancel
+    </Button>
+    <Button type="primary" onClick={onApply}>
+      Apply
+    </Button>
+  </div>
+);
 
 export default Footer;

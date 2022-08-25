@@ -1,20 +1,21 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import style from './Datepicker.module.css';
 import SideMenu from './sideMenu/SideMenu';
 import Footer from './footer/Footer';
 import CalendarCard from './calendar/CalendarCard';
-import { DatepickerProvider } from "./state/datepicker";
+import { DatepickerProvider } from './state/datepicker';
 
-const Datepicker = () => (
+const Datepicker = ({ open, onCancel, onApply }) => (
   <DatepickerProvider>
-    <div className={style.Modal}>
+    <div className={classNames(style.Modal, { [style.ModalOpen]: open })}>
       <div className={style.Container}>
         <div className={style.Content}>
           <SideMenu />
           <CalendarCard />
         </div>
-        <Footer />
+        <Footer onCancel={onCancel} onApply={onApply} />
       </div>
     </div>
   </DatepickerProvider>
