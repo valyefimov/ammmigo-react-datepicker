@@ -13,19 +13,15 @@ const Datepicker = () => {
   const [show, setShow] = useState(false);
   return (
     <DatepickerProvider>
-      <div className={style.Datepicker}>
-        <div className={style.Dropdown}>
-          <div>{namePeriod}</div>
-          <div className={style.ChevronPosition}>
-            <ChevronDown />
-          </div>
-        </div>
-        {/*<div className={style.Content}>*/}
-        {/*  <SideMenu />*/}
-        {/*  <CalendarCard />*/}
-        {/*</div>*/}
-        {/*<Footer />*/}
+      <div>{namePeriod}</div>
+      <div className={style.ChevronPosition}>
+        <ChevronDown />
       </div>
+      {/*<div className={style.Content}>*/}
+      {/*  <SideMenu />*/}
+      {/*  <CalendarCard />*/}
+      {/*</div>*/}
+      {/*<Footer />*/}
     </DatepickerProvider>
   );
 };
