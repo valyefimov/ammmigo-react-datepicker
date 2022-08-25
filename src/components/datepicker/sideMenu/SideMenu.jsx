@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import isToday from 'date-fns/isToday';
 import isYesterday from 'date-fns/isYesterday';
-import addDays from 'date-fns/addDays';
 import subDays from 'date-fns/subDays';
 import differenceInDays from 'date-fns/differenceInDays';
 import startOfYesterday from 'date-fns/startOfYesterday';
@@ -10,6 +9,7 @@ import startOfYesterday from 'date-fns/startOfYesterday';
 import { useDatepicker } from '../state/datepicker';
 import style from './SideMenu.module.css';
 import TickIcon from '../icons/TickIcon';
+import ChevronRightIcon from '../icons/ChevronRightIcon';
 
 const SideMenu = () => {
   const { startDate, endDate, setStartDate, setEndDate, setSelectedMonth } = useDatepicker();
@@ -83,6 +83,8 @@ const SideMenu = () => {
     },
   ];
 
+  const plug = false;
+
   return (
     <div className={style.SideMenu}>
       {buttons.map((button) => (
@@ -93,7 +95,7 @@ const SideMenu = () => {
           className={classNames(style.Button, { [style.ButtonActive]: button.isActive })}
         >
           {button.title}
-          <TickIcon />
+          {plug ? <ChevronRightIcon /> : <TickIcon />}
         </button>
       ))}
     </div>
