@@ -82,7 +82,8 @@ const Calendar = () => {
                 [style.Today]: isToday,
                 [style.NotCalendarDay]: !displayButton,
                 [style.DaySelected]: differenceInDays(date, startDate) >= 0 && differenceInDays(date, endDate) <= 0,
-                [style.StartOrEndDay]: differenceInDays(date, startDate) === 0 || differenceInDays(date, endDate) === 0,
+                [style.StartDate]: isSameDay(date, startDate),
+                [style.EndDate]: isSameDay(date, endDate),
               })}
             >
               {displayButton ? (

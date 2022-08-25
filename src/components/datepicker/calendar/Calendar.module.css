@@ -48,8 +48,19 @@
   color: #323240;
 }
 
-.StartOrEndDay .DayButton {
+.StartDate .DayButton,
+.EndDate .DayButton {
   background-color: #4747fc;
   color: white;
   border-radius: 50%;
+}
+
+.StartDate {
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+.EndDate {
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
 }
