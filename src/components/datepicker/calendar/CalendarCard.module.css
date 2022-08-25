@@ -1,0 +1,6 @@
+.CalendarCard {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  padding: 12px;
+}
