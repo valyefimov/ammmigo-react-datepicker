@@ -12,56 +12,61 @@ import TickIcon from '../icons/TickIcon';
 import ChevronRightIcon from '../icons/ChevronRightIcon';
 
 const SideMenu = () => {
-  const { startDate, endDate, setStartDate, setEndDate, setSelectedMonth } = useDatepicker();
+  const { startDate, endDate, setStartDate, setEndDate, setSelectedMonth, isCustomRange, setIsCustomRange } =
+    useDatepicker();
 
   const buttons = [
     {
       title: 'Today',
-      isActive: startDate === endDate && isToday(startDate),
+      isActive: !isCustomRange && startDate === endDate && isToday(startDate),
       onClick: () => {
         const today = new Date();
 
         setSelectedMonth(today);
         setStartDate(today);
         setEndDate(today);
+        setIsCustomRange(false);
       },
     },
     {
       title: 'Yesterday',
-      isActive: startDate === endDate && isYesterday(startDate),
+      isActive: !isCustomRange && startDate === endDate && isYesterday(startDate),
       onClick: () => {
         const yesterday = startOfYesterday();
 
         setSelectedMonth(yesterday);
         setStartDate(yesterday);
         setEndDate(yesterday);
+        setIsCustomRange(false);
       },
     },
     {
       title: 'Last 7 days',
-      isActive: differenceInDays(endDate, startDate) === 6 && isYesterday(endDate),
+      isActive: !isCustomRange && differenceInDays(endDate, startDate) === 6 && isYesterday(endDate),
       onClick: () => {
         const today = new Date();
 
         setSelectedMonth(today);
         setStartDate(subDays(today, 7));
         setEndDate(subDays(today, 1));
+        setIsCustomRange(false);
       },
     },
     {
       title: 'Last 30 days',
-      isActive: differenceInDays(endDate, startDate) === 29 && isYesterday(endDate),
+      isActive: !isCustomRange && differenceInDays(endDate, startDate) === 29 && isYesterday(endDate),
       onClick: () => {
         const today = new Date();
 
         setSelectedMonth(today);
         setStartDate(subDays(today, 30));
         setEndDate(subDays(today, 1));
+        setIsCustomRange(false);
       },
     },
     {
       title: 'Last 90 days',
-      isActive: differenceInDays(endDate, startDate) === 89 && isYesterday(endDate),
+      isActive: !isCustomRange && differenceInDays(endDate, startDate) === 89 && isYesterday(endDate),
       onClick: () => {
         const today = new Date();
 
@@ -72,14 +77,8 @@ const SideMenu = () => {
     },
     {
       title: 'Custom',
-      isActive: false, //startDate === endDate && isYesterday(startDate),
-      onClick: () => {
-        // const yesterday = startOfYesterday();
-        //
-        // setSelectedMonth(yesterday);
-        // setStartDate(yesterday);
-        // setEndDate(yesterday);
-      },
+      isActive: isCustomRange,
+      onClick: () => setIsCustomRange(true),
     },
   ];
 
